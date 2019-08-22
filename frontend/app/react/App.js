@@ -1,6 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 
 import { Component } from 'preact'
+
 import GameContainer from './GameContainer'
 import Leaderboard from './Leaderboard'
 import SetScore from './SetScore'

@@ -13,10 +13,10 @@
  *   your deployed files. 
  */
 
-var path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { HashedModuleIdsPlugin } = require('webpack');
+var path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { HashedModuleIdsPlugin } = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -152,5 +152,5 @@ module.exports = {
     modules: ['node_modules', 'frontend'],
     extensions: ['.js', '.jsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
-  }
-};
+  },
+}

@@ -16,9 +16,9 @@
  *   here.
  */
 
-var path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   watch: true,
@@ -27,7 +27,7 @@ module.exports = {
     path: path.resolve(process.cwd(), 'build'),
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-    publicPath: '/',
+    publicPath: '/'
   },
   optimization: {
     minimize: false,
@@ -139,5 +139,4 @@ module.exports = {
     extensions: ['.js', '.jsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
-
-};
+}
