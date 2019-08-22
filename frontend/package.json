@@ -12,7 +12,9 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "koji-tools": "^0.5.1"
+    "koji-tools": "^0.5.1",
+    "preact": "^8.5.2",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
