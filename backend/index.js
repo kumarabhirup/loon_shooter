@@ -19,6 +19,8 @@ import express from 'express'
 import * as fs from 'fs'
 import bodyParser from 'body-parser'
 
+import leaderboard from './leaderboard'
+
 const app = express()
 
 // Body parser
@@ -108,6 +110,9 @@ Object.keys(backendConfig).forEach((routeName) => {
     })
   }
 })
+
+// routes
+leaderboard(app)
 
 app.listen(process.env.PORT || 3333, null, async err => {
     if (err) {
