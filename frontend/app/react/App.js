@@ -1,6 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 
-import { Component } from 'preact'
+import React, { Component } from 'react'
 
 import GameContainer from './GameContainer'
 import Leaderboard from './Leaderboard'

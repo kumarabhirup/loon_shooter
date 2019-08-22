@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/destructuring-assignment */
 
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import Koji from 'koji-tools'
 
 class Leaderboard extends Component {

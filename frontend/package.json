@@ -15,7 +15,9 @@
     "koji-tools": "^0.5.1",
     "preact": "^8.5.2",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

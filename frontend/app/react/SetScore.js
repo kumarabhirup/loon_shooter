@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/destructuring-assignment */
 
-import { Component } from 'preact'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Koji from 'koji-tools'
 

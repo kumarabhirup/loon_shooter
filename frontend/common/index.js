@@ -10,7 +10,8 @@
  */
 
 import React from 'react'
-import { render } from 'preact'
+import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
 import Koji from 'koji-tools'
 
 import App from '../app/react/App'
@@ -21,15 +22,20 @@ import './leaderboardStyles.css'
 Koji.pageLoad()
 window.Koji = Koji
 
-let root
-function init() {
-  root = render(<App />, document.body, root)
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('p5Game')
+  )
 }
+
+render(App)
 
 // in development, set up HMR:
 if (module.hot) {
-  require('preact/devtools')
-  module.hot.accept('../app/react/App', () => requestAnimationFrame(init))
+  module.hot.accept('../app/react/App', () => {
+    requestAnimationFrame(() => render(App))
+  })
 }
-
-init()

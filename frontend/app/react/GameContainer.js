@@ -4,7 +4,7 @@
 
 /* global sndMusic */
 
-import { Component } from 'preact'
+import React, { Component } from 'react'
 
 const { p5 } = window
 
