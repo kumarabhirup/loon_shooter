@@ -2,9 +2,9 @@
   "strings": {
     "fontFamily": "https://fonts.googleapis.com/css?family=Lilita+One",
     "title": "p5js Scaffold",
-    "instructions1": "TOUCH or ARROW KEYS to move",
-    "instructions2": "Collect upgrades to increase firepower!",
-    "instructions3": "Blast your way through everything!",
+    "instructions1": "Just a scaffold",
+    "instructions2": "Thanks to @Svarog and @diddy",
+    "instructions3": "For their boilerplate code",
     "gameOverText": "GAME OVER",
     "highScoreText": "High Score:",
     "playButtonText": "PLAY NOW",
