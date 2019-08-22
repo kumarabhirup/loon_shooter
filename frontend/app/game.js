@@ -5,8 +5,8 @@
 function gamePlay() {
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < floatingTexts.length; i++) {
-      floatingTexts[i].update()
-      floatingTexts[i].render()
+    floatingTexts[i].update()
+    floatingTexts[i].render()
   }
 
   // InGame UI
@@ -24,7 +24,13 @@ function gamePlay() {
 
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < lives; i++) {
-      image(imgLife, lifeSize / 2 + lifeSize * i, lifeSize / 2, lifeSize, lifeSize)
+    image(
+      imgLife,
+      lifeSize / 2 + lifeSize * i,
+      lifeSize / 2,
+      lifeSize,
+      lifeSize
+    )
   }
 
   cleanup()

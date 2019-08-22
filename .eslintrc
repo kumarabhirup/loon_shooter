@@ -4,7 +4,7 @@
   ],
   "rules": {
     "semi": [2, "never"],
-    "prettier/prettier": false
+    // "prettier/prettier": false
   },
   "parserOptions": {
     "ecmaVersion": 2017

@@ -10,8 +10,8 @@ function gameBeginningOver() {
 
   // Resize title until it fits the screen
   while (textWidth(titleText) > width * 0.9) {
-      titleSize *= 0.9
-      textSize(titleSize)
+    titleSize *= 0.9
+    textSize(titleSize)
   }
 
   fill(Koji.config.colors.titleColor)
@@ -28,14 +28,14 @@ function gameBeginningOver() {
 
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < instructionsText.length; i++) {
-      instructionsSize[i] = floor(objSize * 0.75)
-      textSize(instructionsSize[i])
+    instructionsSize[i] = floor(objSize * 0.75)
+    textSize(instructionsSize[i])
 
-      // Resize text until it fits the screen
-      while (textWidth(instructionsText[i]) > width * 0.9) {
-          instructionsSize[i] *= 0.9
-          textSize(instructionsSize[i])
-      }
+    // Resize text until it fits the screen
+    while (textWidth(instructionsText[i]) > width * 0.9) {
+      instructionsSize[i] *= 0.9
+      textSize(instructionsSize[i])
+    }
   }
 
   textSize(instructionsSize[0])
@@ -58,12 +58,4 @@ function gameBeginningOver() {
 
   leaderboardButton.update()
   leaderboardButton.btn.draw()
-
-  // Draw score text after the game
-  if (!gameBeginning) {
-      textSize(objSize * 0.9)
-      fill(Koji.config.colors.scoreColor)
-      textAlign(CENTER, TOP)
-      text(`${Koji.config.strings.scoreText} ${score}`, width / 2, playButton.pos.y + objSize * 4)
-  }
 }
