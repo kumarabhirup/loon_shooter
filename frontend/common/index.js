@@ -9,8 +9,11 @@
  *   worker is registered.
  */
 
+import React from 'react'
 import { render } from 'preact'
 import Koji from 'koji-tools'
+
+import App from '../app/react/App'
 
 import './index.css'
 import './leaderboardStyles.css'
@@ -20,7 +23,6 @@ window.Koji = Koji
 
 let root
 function init() {
-  const App = require('../app/react/App').default
   root = render(<App />, document.body, root)
 }
 
