@@ -14,9 +14,7 @@
     "playButtonClickColor": "#ffda5a",
     "buttonHoverColor": "#23bcc5",
     "buttonClickColor": "#2CECF5",
-    "lifeColor": "#d54b8c",
-    "weaponColor": "#ffda5a",
-    "enemyNumberColor": "#ffffff"
+    "lifeColor": "#d54b8c"
   },
   "@@editor": [{
     "key": "colors",
@@ -66,6 +64,26 @@
       {
         "key": "playButtonClickColor",
         "name": "Play Button Click Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonTextColor",
+        "name": "Button Text Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonColor",
+        "name": "Button Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonHoverColor",
+        "name": "Button Hover Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonClickColor",
+        "name": "Button Click Color",
         "type": "color"
       },
       {
