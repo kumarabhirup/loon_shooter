@@ -11,7 +11,7 @@
     "scoreText": "Score:",
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
-    "emailInputEnabled": false,
+    "emailInputEnabled": true,
     "health": "3",
     "lives": "3",
     "lifeText": "+LIFE",
@@ -39,164 +39,167 @@
     "allowWrongMoves": false,
     "comboText": "AWESOME, COMBO, GREAT, FANTASTIC, WOW, AMAZING"
   },
-  "@@editor": [{
-    "key": "strings",
-    "name": "Game Settings",
-    "icon": "💡",
-    "source": "strings.json",
-    "fields": [{
-        "key": "title",
-        "name": "Game Title",
-        "description": "The title that is displayed in the start menu",
-        "type": "text"
-      },
-      {
-        "key": "instructions1",
-        "name": "Game Instructions 1",
-        "type": "text"
-      },
-      {
-        "key": "instructions2",
-        "name": "Game Instructions 2",
-        "type": "text"
-      },
-      {
-        "key": "instructions3",
-        "name": "Game Instructions 3",
-        "type": "text"
-      },
-      {
-        "key": "fontFamily",
-        "name": "Font Family",
-        "description": "Google fonts link to font to use in the game",
-        "type": "text"
-      },
-      {
-        "key": "playButtonText",
-        "name": "Play Button Text",
-        "description": "Label on the Play Button",
-        "type": "text"
-      },
-      {
-        "key": "scoreText",
-        "name": "Score Text",
-        "description": "Default: 'Score:'",
-        "type": "text"
-      },
-      {
-        "key": "highscoreText",
-        "name": "High Score Text",
-        "description": "Default: 'High Score:'",
-        "type": "text"
-      },
-      {
-        "key": "highscoreGainedText",
-        "name": "High Score Gained Text",
-        "description": "When you get a new high score",
-        "type": "text"
-      },
-      {
-        "key": "emailInputEnabled",
-        "name": "Enable E-Mail Input",
-        "description": "Enable/Disable E-Mail input while submitting score.",
-        "type": "boolean"
-      },
-      {
-        "key": "lifeText",
-        "name": "Life Text",
-        "description": "When you collect a life",
-        "type": "text"
-      },
-      {
-        "key": "weaponText",
-        "name": "Weapon Text",
-        "description": "When you collect a weapon",
-        "type": "text"
-      },
-      {
-        "key": "lives",
-        "name": "Starting Lives",
-        "description": "How many lives you initially have",
-        "type": "text"
-      },
-      {
-        "key": "maxLives",
-        "name": "Max Lives",
-        "description": "How many lives you can have max",
-        "type": "text"
-      },
-      {
-        "key": "enemySpawnFrequency",
-        "name": "Enemy Spawn Frequency",
-        "description": "How often enemies will spawn (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "strongEnemySpawnFrequency",
-        "name": "Strong Enemy Spawn Frequency",
-        "description": "How often strong enemies will spawn (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "lifeSpawnFrequency",
-        "name": "Life Spawn Frequency",
-        "description": "How often life collectibles will spawn (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "weaponSpawnFrequency",
-        "name": "Weapon Spawn Frequency",
-        "description": "How often weapon collectibles will spawn (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "enemyAverageSpeed",
-        "name": "Enemy Average Speed",
-        "description": "How fast enemies will move on average (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "drawBackgroundStars",
-        "name": "Draw Background Stars",
-        "description": "Whether to draw moving stars in the background",
-        "type": "boolean"
-      },
-      {
-        "key": "starCount",
-        "name": "Star Count",
-        "description": "How many stars to draw in the background, if enabled (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "scoreGain",
-        "name": "Score Gain",
-        "description": "How many points you get for collectibles (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "enemyDestroyScoreModifier",
-        "name": "Score Modifier For Destroyed Enemies",
-        "description": "How much the base score gain is multiplied after destroying an enemy with a shield (Integer)",
-        "type": "text"
-      },
-      {
-        "key": "showEnemyNumber",
-        "name": "Show Enemy Numbers",
-        "description": "",
-        "type": "boolean"
-      },
-      {
-        "key": "enemyNumberSize",
-        "name": "Enemy Number Size",
-        "description": "How much space the number is occupying relative to the enemy image (1-100)(Integer)",
-        "type": "text"
-      },
-      {
-        "key": "fireCooldown",
-        "name": "Fire Cooldown",
-        "description": "How much time in MILISECONDS between each projectile",
-        "type": "text"
-      }
-    ]
-  }]
+  "@@editor": [
+    {
+      "key": "strings",
+      "name": "Game Settings",
+      "icon": "💡",
+      "source": "strings.json",
+      "fields": [
+        {
+          "key": "title",
+          "name": "Game Title",
+          "description": "The title that is displayed in the start menu",
+          "type": "text"
+        },
+        {
+          "key": "instructions1",
+          "name": "Game Instructions 1",
+          "type": "text"
+        },
+        {
+          "key": "instructions2",
+          "name": "Game Instructions 2",
+          "type": "text"
+        },
+        {
+          "key": "instructions3",
+          "name": "Game Instructions 3",
+          "type": "text"
+        },
+        {
+          "key": "fontFamily",
+          "name": "Font Family",
+          "description": "Google fonts link to font to use in the game",
+          "type": "text"
+        },
+        {
+          "key": "playButtonText",
+          "name": "Play Button Text",
+          "description": "Label on the Play Button",
+          "type": "text"
+        },
+        {
+          "key": "scoreText",
+          "name": "Score Text",
+          "description": "Default: 'Score:'",
+          "type": "text"
+        },
+        {
+          "key": "highscoreText",
+          "name": "High Score Text",
+          "description": "Default: 'High Score:'",
+          "type": "text"
+        },
+        {
+          "key": "highscoreGainedText",
+          "name": "High Score Gained Text",
+          "description": "When you get a new high score",
+          "type": "text"
+        },
+        {
+          "key": "emailInputEnabled",
+          "name": "Enable E-Mail Input",
+          "description": "Enable/Disable E-Mail input while submitting score.",
+          "type": "boolean"
+        },
+        {
+          "key": "lifeText",
+          "name": "Life Text",
+          "description": "When you collect a life",
+          "type": "text"
+        },
+        {
+          "key": "weaponText",
+          "name": "Weapon Text",
+          "description": "When you collect a weapon",
+          "type": "text"
+        },
+        {
+          "key": "lives",
+          "name": "Starting Lives",
+          "description": "How many lives you initially have",
+          "type": "text"
+        },
+        {
+          "key": "maxLives",
+          "name": "Max Lives",
+          "description": "How many lives you can have max",
+          "type": "text"
+        },
+        {
+          "key": "enemySpawnFrequency",
+          "name": "Enemy Spawn Frequency",
+          "description": "How often enemies will spawn (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "strongEnemySpawnFrequency",
+          "name": "Strong Enemy Spawn Frequency",
+          "description": "How often strong enemies will spawn (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "lifeSpawnFrequency",
+          "name": "Life Spawn Frequency",
+          "description": "How often life collectibles will spawn (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "weaponSpawnFrequency",
+          "name": "Weapon Spawn Frequency",
+          "description": "How often weapon collectibles will spawn (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "enemyAverageSpeed",
+          "name": "Enemy Average Speed",
+          "description": "How fast enemies will move on average (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "drawBackgroundStars",
+          "name": "Draw Background Stars",
+          "description": "Whether to draw moving stars in the background",
+          "type": "boolean"
+        },
+        {
+          "key": "starCount",
+          "name": "Star Count",
+          "description": "How many stars to draw in the background, if enabled (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "scoreGain",
+          "name": "Score Gain",
+          "description": "How many points you get for collectibles (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "enemyDestroyScoreModifier",
+          "name": "Score Modifier For Destroyed Enemies",
+          "description": "How much the base score gain is multiplied after destroying an enemy with a shield (Integer)",
+          "type": "text"
+        },
+        {
+          "key": "showEnemyNumber",
+          "name": "Show Enemy Numbers",
+          "description": "",
+          "type": "boolean"
+        },
+        {
+          "key": "enemyNumberSize",
+          "name": "Enemy Number Size",
+          "description": "How much space the number is occupying relative to the enemy image (1-100)(Integer)",
+          "type": "text"
+        },
+        {
+          "key": "fireCooldown",
+          "name": "Fire Cooldown",
+          "description": "How much time in MILISECONDS between each projectile",
+          "type": "text"
+        }
+      ]
+    }
+  ]
 }
