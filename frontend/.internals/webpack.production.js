@@ -148,7 +148,7 @@ module.exports = {
       hashDigest: 'hex',
       hashDigestLength: 20,
     }),
-    new Dotenv({ path: '../.env' })
+    new Dotenv({ path: '../.env', systemvars: true })
   ],
   resolve: {
     modules: ['node_modules', 'frontend'],

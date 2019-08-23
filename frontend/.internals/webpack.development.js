@@ -137,7 +137,7 @@ module.exports = {
       inject: true,
       template: './common/index.html',
     }),
-    new Dotenv({ path: '../.env' })
+    new Dotenv({ path: '../.env', systemvars: true })
   ],
   resolve: {
     modules: ['node_modules', 'frontend'],
