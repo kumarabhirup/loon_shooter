@@ -11,6 +11,7 @@
     "scoreText": "Score:",
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
+    "emailInputEnabled": false,
     "health": "3",
     "lives": "3",
     "lifeText": "+LIFE",
@@ -93,6 +94,12 @@
         "name": "High Score Gained Text",
         "description": "When you get a new high score",
         "type": "text"
+      },
+      {
+        "key": "emailInputEnabled",
+        "name": "Enable E-Mail Input",
+        "description": "Enable/Disable E-Mail input while submitting score.",
+        "type": "boolean"
       },
       {
         "key": "lifeText",
