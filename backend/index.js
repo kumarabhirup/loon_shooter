@@ -14,6 +14,8 @@
  *   to do it.
  */
 
+require('dotenv').config({ path: '../.env' })
+
 import 'babel-polyfill'
 import express from 'express'
 import * as fs from 'fs'
