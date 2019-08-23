@@ -13,7 +13,7 @@ class Leaderboard extends Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.KOJI_BACKEND_URL}/leaderboard`)
+    fetch(`${Koji.config.serviceMap.backend}/leaderboard`)
       .then(response => response.json())
       .then(({ scores }) => {
         this.setState({ dataIsLoaded: true, scores })
