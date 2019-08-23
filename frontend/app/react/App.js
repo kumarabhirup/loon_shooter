@@ -29,6 +29,7 @@ export default class App extends Component {
         </div>
       )
     }
+
     if (this.state.view === 'setScore') {
       return (
         <div>
@@ -36,6 +37,7 @@ export default class App extends Component {
         </div>
       )
     }
+
     if (this.state.view === 'leaderboard') {
       return (
         <div>
@@ -43,6 +45,7 @@ export default class App extends Component {
         </div>
       )
     }
+
     return null
   }
 }

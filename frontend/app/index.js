@@ -128,7 +128,6 @@ function setup() {
    * Load music asynchronously and play once it's loaded
    * This way the game will load faster
    */
-
   if (Koji.config.sounds.backgroundMusic)
     sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
 }
