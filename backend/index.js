@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({
 
 // CORS
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Origin', process.env.KOJI_FRONTEND_URL) // use '*' as second param to allow any client to hack in
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization, X-Jiro-Request-Tag')
   next()
 })
