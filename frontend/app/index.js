@@ -68,8 +68,7 @@ function preload() {
   myFont = newStr
 
   // Load background if there's any
-  // eslint-disable-next-line eqeqeq
-  if (Koji.config.images.background != '') {
+  if (Koji.config.images.background !== '') {
     imgBackground = loadImage(Koji.config.images.background)
   }
 
