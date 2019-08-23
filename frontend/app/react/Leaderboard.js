@@ -12,7 +12,7 @@ class Leaderboard extends Component {
     error: false,
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch(`${Koji.config.serviceMap.backend}/leaderboard`)
       .then(response => response.json())
       .then(({ scores }) => {

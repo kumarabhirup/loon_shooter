@@ -9,7 +9,7 @@ import React, { Component } from 'react'
 const { p5 } = window
 
 class GameContainer extends Component {
-  componentWillMount() {
+  componentDidMount() {
     require('script-loader!app/index.js')
 
     // Game Beginning and Game Screen
@@ -25,9 +25,7 @@ class GameContainer extends Component {
     require('script-loader!app/lib/collisions.js')
     require('script-loader!app/lib/utilities.js')
     require('script-loader!app/lib/entities.js')
-  }
 
-  componentDidMount() {
     // eslint-disable-next-line new-cap
     this.p5Game = new p5(null, document.getElementById('game-container'))
   }
