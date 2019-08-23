@@ -24,6 +24,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
+    "@shinnn/eslint-config-node": "^6.0.2",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
