@@ -15,8 +15,9 @@
 
 var path = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { HashedModuleIdsPlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: 'production',
@@ -147,6 +148,7 @@ module.exports = {
       hashDigest: 'hex',
       hashDigestLength: 20,
     }),
+    new Dotenv({ path: '../.env' })
   ],
   resolve: {
     modules: ['node_modules', 'frontend'],

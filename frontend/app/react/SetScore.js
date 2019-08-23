@@ -46,7 +46,7 @@ class SetScore extends Component {
         },
       }
 
-      fetch(`${Koji.config.serviceMap.backend}/leaderboard/save`, {
+      fetch(`${process.env.KOJI_BACKEND_URL}/leaderboard/save`, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
