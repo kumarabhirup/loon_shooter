@@ -85,7 +85,7 @@ Or hit me up on Koji's official Discord server, username: kumar_abhirup 🌱
 
 **GPL © [Kumar Abhirup](https://kumar.now.sh)**
 
-_Follow me 👋 **on Twitter**_ →   [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup/)
+_Follow me 👋 **on Twitter**_ →   [![Twitter](https://img.shields.io/twitter/follow/kumar_abhirup.svg?style=social&label=@kumar_abhirup)](https://twitter.com/kumar_abhirup)
 
 ## Credits for assets
 
