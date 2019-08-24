@@ -1,5 +1,11 @@
 {
   "images": {
+    "shooterImage": "https://i.ibb.co/Kz2FK8X/shooter.png",
+    "balloonImage1": "https://i.ibb.co/JmCqGzS/blue.png",
+    "balloonImage2": "https://i.ibb.co/kS4m88J/green.png",
+    "balloonImage3": "https://i.ibb.co/JQWzr2h/red.png",
+    "balloonImage4": "https://i.ibb.co/6nHt99L/yellow.png",
+    "bombImage": "https://i.ibb.co/wct3jcJ/bomb.png",
     "soundImage": "https://i.imgur.com/rtFppa8.png",
     "muteImage": "https://i.imgur.com/AR7C733.png",
     "lifeIcon": "https://i.imgur.com/39e9e4h.png",
@@ -24,6 +30,12 @@
     "icon": "💪🏻",
     "source": "images.json",
     "fields": [{
+        "key": "shooterImage",
+        "name": "Shooter Image",
+        "description": "That's how the shooter looks",
+        "type": "image"
+      },
+      {
         "key": "soundImage",
         "name": "Sound Icon",
         "description": "Ideal size: 32x32",

@@ -12,6 +12,9 @@ const canEnd = false
 let floatingTexts = []
 
 // Game Objects
+let balloons = []
+let shooter
+let shootingBalloon
 
 // Buttons
 let playButton
@@ -27,6 +30,8 @@ let score = 0
 // Data taken from Game Settings
 
 // Images
+let imgShooter
+let imgBalloons = []
 let imgLife
 let imgBackground
 
@@ -73,6 +78,14 @@ function preload() {
   }
 
   // Load images
+  imgShooter = loadImage(Koji.config.images.shooterImage)
+
+  imgBalloons[0] = loadImage(Koji.config.images.balloonImage1)
+  imgBalloons[1] = loadImage(Koji.config.images.balloonImage2)
+  imgBalloons[2] = loadImage(Koji.config.images.balloonImage3)
+  imgBalloons[3] = loadImage(Koji.config.images.balloonImage4)
+  imgBalloons[4] = loadImage(Koji.config.images.bombImage)
+
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
   muteImage = loadImage(Koji.config.images.muteImage)
@@ -122,6 +135,27 @@ function setup() {
   endButton = new EndButton()
 
   gameBeginning = true
+
+  // Load game assets
+  shooter = new GameObject(
+    { x: width / 2, y: height - objSize * 2 },
+    { width: 2 * objSize, height: 4 * objSize },
+    {
+      shape: 'rectangle',
+      image: imgShooter,
+      color: { r: 255, g: 255, b: 255 },
+      rotate: true,
+    }
+  )
+  shootingBalloon = new GameObject(
+    { x: width / 2, y: height - objSize * 10 },
+    { radius: 1 * objSize },
+    {
+      shape: 'circle',
+      image: imgBalloons[2],
+      rotate: true,
+    }
+  )
 
   /**
    * Load music asynchronously and play once it's loaded

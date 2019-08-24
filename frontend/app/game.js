@@ -9,7 +9,24 @@ function gamePlay() {
     floatingTexts[i].render()
   }
 
-  // InGame UI
+  /**
+   * IN GAME UI CODE GOES HERE
+   */
+
+  // Shooter
+  const shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
+  shooter.show()
+  shooter.rotate(
+    map(
+      mouseX,
+      shooterRotateLimit,
+      width - shooterRotateLimit,
+      PI / -3.5,
+      PI / 3.5,
+      true
+    )
+  )
+  shootingBalloon.show()
 
   // Score draw
   const scoreX = width - objSize / 2

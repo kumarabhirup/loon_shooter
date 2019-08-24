@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 
-const { Bodies, World } = Matter
+const { Bodies } = Matter
 
 /**
  * @class GameObject
@@ -19,7 +19,7 @@ class GameObject {
     cordinates = { x: null, y: null }, // positioning
     sizing = { width: null, height: null, radius: null }, // if the shape is circle, provide radius, else... width and height
     settings = {
-      shape: Koji.config.strings.objectShape,
+      shape: 'rectangle',
       image: null,
       color: { r: 0, g: 255, b: 255, a: 1 },
       rotate: true,
@@ -182,6 +182,10 @@ class GameObject {
     }
 
     pop()
+  }
+
+  rotate(degrees = 0) {
+    this.body.angle = degrees
   }
 
   // Use this for your destruction code -> eg. World.remove(world, this.body)
