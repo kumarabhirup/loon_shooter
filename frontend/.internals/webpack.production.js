@@ -13,10 +13,11 @@
  *   your deployed files. 
  */
 
-var path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { HashedModuleIdsPlugin } = require('webpack');
+var path = require('path')
+const webpack = require('webpack')
+const { HashedModuleIdsPlugin } = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: 'production',
@@ -44,7 +45,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
       },
@@ -147,10 +148,11 @@ module.exports = {
       hashDigest: 'hex',
       hashDigestLength: 20,
     }),
+    new Dotenv({ path: '../.env', systemvars: true })
   ],
   resolve: {
     modules: ['node_modules', 'frontend'],
     extensions: ['.js', '.jsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
-  }
-};
+  },
+}

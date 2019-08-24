@@ -1,19 +1,25 @@
 {
   "strings": {
-    "fontFamily": "https://fonts.googleapis.com/css?family=Squada+One",
-    "title": "Space Blast",
-    "instructions1": "TOUCH or ARROW KEYS to move",
-    "instructions2": "Collect upgrades to increase firepower!",
-    "instructions3": "Blast your way through everything!",
+    "fontFamily": "https://fonts.googleapis.com/css?family=Lilita+One",
+    "title": "p5js Scaffold",
+    "instructions1": "Just a scaffold",
+    "instructions2": "Thanks to @Svarog and @diddy",
+    "instructions3": "For their boilerplate code",
     "gameOverText": "GAME OVER",
     "highScoreText": "High Score:",
     "playButtonText": "PLAY NOW",
     "scoreText": "Score:",
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
+    "emailInputEnabled": true,
     "health": "3",
     "lives": "3",
     "lifeText": "+LIFE",
+    "scoreGain": "5",
+    "enableCursor": true,
+    "noMoves": "No Moves Available!",
+    "leaderboardButtonText": "LEADERBOARD",
+    "endButtonText": "END GAME",
     "weaponText": "FIREPOWER",
     "enemySpawnFrequency": "40",
     "strongEnemySpawnFrequency": "30",
@@ -22,14 +28,16 @@
     "enemyAverageSpeed": "20",
     "drawBackgroundStars": true,
     "starCount": "100",
-    "scoreGain": "5",
     "enemyDestroyScoreModifier": "3",
     "shieldDuration": "4000",
     "maxLives": "5",
     "weaponSpawnFrequency": "2",
     "enemyNumberSize": "75",
     "showEnemyNumber": true,
-    "fireCooldown": "250"
+    "fireCooldown": "250",
+    "noTimeLeftText": "GAME OVER",
+    "allowWrongMoves": false,
+    "comboText": "AWESOME, COMBO, GREAT, FANTASTIC, WOW, AMAZING"
   },
   "@@editor": [
     {
@@ -88,6 +96,12 @@
           "name": "High Score Gained Text",
           "description": "When you get a new high score",
           "type": "text"
+        },
+        {
+          "key": "emailInputEnabled",
+          "name": "Enable E-Mail Input",
+          "description": "Enable/Disable E-Mail input while submitting score.",
+          "type": "boolean"
         },
         {
           "key": "lifeText",

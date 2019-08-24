@@ -26,19 +26,32 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.sound.min.js"></script>
 	<script language="javascript" type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/addons/p5.dom.min.js"></script>
+	<script language="javascript" type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.12.0/matter.min.js"></script>
 	<!-- End P5 Library Section -->
 </head>
 
 <!--Disable touch zooming, mobile scrolling, and right click on desktop-->
 
-<body id="root" style="touch-action: none; overflow: hidden; overscroll-behavior-y: contain; position: fixed;"
-	oncontextmenu="return false">
+<body oncontextmenu="return false">
 	<noscript>You need to enable JavaScript to run this app.</noscript>
+
+	<div id="p5_loading">
+		<div class="lds-ring">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+
+	<div id="p5Game"></div>
 </body>
 
 <footer>
 	<!-- Prevent mobile scrolling/refreshing -->
 	<script>
+		/* eslint-disable */
 		document.addEventListener(
 			'touchmove',
 			function (e) {

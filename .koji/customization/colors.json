@@ -4,84 +4,103 @@
     "textColor": "#ffffff",
     "playButtonTextColor": "#0a0a31",
     "playButtonColor": "#ffda5a",
+    "buttonTextColor": "#222222",
+    "buttonColor": "#2CECF5",
     "scoreColor": "#ffda5a",
     "highscoreColor": "#ffda5a",
     "titleColor": "#ffda5a",
     "instructionsColor": "#dfdcea",
     "playButtonHoverColor": "#E8C034",
     "playButtonClickColor": "#ffda5a",
-    "lifeColor": "#d54b8c",
-    "weaponColor": "#ffda5a",
-    "enemyNumberColor": "#ffffff"
+    "buttonHoverColor": "#23bcc5",
+    "buttonClickColor": "#2CECF5",
+    "lifeColor": "#d54b8c"
   },
-  "@@editor": [
-    {
-      "key": "colors",
-      "name": "Colors",
-      "icon": "🎨",
-      "source": "colors.json",
-      "fields": [
-        {
-          "key": "backgroundColor",
-          "name": "Background color",
-          "type": "color"
-        },
-        {
-          "key": "titleColor",
-          "name": "Game Title Color",
-          "type": "color"
-        },
-        {
-          "key": "instructionsColor",
-          "name": "Game Instructions Color",
-          "type": "color"
-        },
-        {
-          "key": "scoreColor",
-          "name": "Score color",
-          "type": "color"
-        },
-        {
-          "key": "highscoreColor",
-          "name": "High Score color",
-          "type": "color"
-        },
-        {
-          "key": "playButtonTextColor",
-          "name": "Play Button Text Color",
-          "type": "color"
-        },
-        {
-          "key": "playButtonColor",
-          "name": "Play Button Color",
-          "type": "color"
-        },
-        {
-          "key": "playButtonHoverColor",
-          "name": "Play Button Hover Color",
-          "type": "color"
-        },
-        {
-          "key": "playButtonClickColor",
-          "name": "Play Button Click Color",
-          "type": "color"
-        },
-        {
-          "key": "lifeColor",
-          "name": "Life Text Color",
-          "type": "color"
-        },
-        {
-          "key": "weaponColor",
-          "name": "Weapon Text Color",
-          "type": "color"
-        },
-        {
-          "key": "enemyNumberColor",
-          "name": "Enemy Number Color",
-          "type": "color"
-        }
-      ]
-    }
-  ]
+  "@@editor": [{
+    "key": "colors",
+    "name": "Colors",
+    "icon": "🎨",
+    "source": "colors.json",
+    "fields": [{
+        "key": "backgroundColor",
+        "name": "Background color",
+        "type": "color"
+      },
+      {
+        "key": "titleColor",
+        "name": "Game Title Color",
+        "type": "color"
+      },
+      {
+        "key": "instructionsColor",
+        "name": "Game Instructions Color",
+        "type": "color"
+      },
+      {
+        "key": "scoreColor",
+        "name": "Score color",
+        "type": "color"
+      },
+      {
+        "key": "highscoreColor",
+        "name": "High Score color",
+        "type": "color"
+      },
+      {
+        "key": "playButtonTextColor",
+        "name": "Play Button Text Color",
+        "type": "color"
+      },
+      {
+        "key": "playButtonColor",
+        "name": "Play Button Color",
+        "type": "color"
+      },
+      {
+        "key": "playButtonHoverColor",
+        "name": "Play Button Hover Color",
+        "type": "color"
+      },
+      {
+        "key": "playButtonClickColor",
+        "name": "Play Button Click Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonTextColor",
+        "name": "Button Text Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonColor",
+        "name": "Button Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonHoverColor",
+        "name": "Button Hover Color",
+        "type": "color"
+      },
+      {
+        "key": "buttonClickColor",
+        "name": "Button Click Color",
+        "type": "color"
+      },
+      {
+        "key": "lifeColor",
+        "name": "Life Text Color",
+        "type": "color"
+      },
+      {
+        "key": "weaponColor",
+        "name": "Weapon Text Color",
+        "type": "color"
+      },
+      {
+        "key": "enemyNumberColor",
+        "name": "Enemy Number Color",
+        "type": "color"
+      }
+    ]
+  }]
 }

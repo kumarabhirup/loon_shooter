@@ -16,9 +16,10 @@
  *   here.
  */
 
-var path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   watch: true,
@@ -27,7 +28,7 @@ module.exports = {
     path: path.resolve(process.cwd(), 'build'),
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-    publicPath: '/',
+    publicPath: '/'
   },
   optimization: {
     minimize: false,
@@ -40,7 +41,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              '@babel/preset-env', 
+              '@babel/preset-react'
+            ]
           }
         }
       },
@@ -133,11 +137,11 @@ module.exports = {
       inject: true,
       template: './common/index.html',
     }),
+    new Dotenv({ path: '../.env', systemvars: true })
   ],
   resolve: {
     modules: ['node_modules', 'frontend'],
     extensions: ['.js', '.jsx', '.react.js'],
     mainFields: ['browser', 'jsnext:main', 'main'],
   },
-
-};
+}

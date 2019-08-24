@@ -3,8 +3,7 @@
     "wesbos"
   ],
   "rules": {
-    "semi": [2, "never"],
-    "prettier/prettier": false
+    "semi": [2, "never"]
   },
   "parserOptions": {
     "ecmaVersion": 2017

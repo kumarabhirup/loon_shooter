@@ -1,7 +1,7 @@
 {
-  "name": "happy-birds",
+  "name": "p5js_scaffold",
   "version": "0.0.1",
-  "description": "Happy birds!",
+  "description": "p5js Scaffold",
   "author": "kumar_abhirup",
   "scripts": {
     "build": "NODE_ENV=production webpack --config ./.internals/webpack.production.js --color -p --progress --hide-modules --display-optimization-bailout",
@@ -12,17 +12,25 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "koji-tools": "^0.5.1"
+    "koji-tools": "^0.5.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-hot-loader": "^4.12.11"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@shinnn/eslint-config-node": "^6.0.2",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
+    "dotenv-webpack": "^1.7.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^4.3.0",
