@@ -73,11 +73,18 @@ class GameObject {
     const { body } = otherElement
 
     if (this.settings.shape === 'circle' && shape === 'circle') {
-      return circleCircleColliding({
-        x: this.body.position.x,
-        y: this.body.position.y,
-        r: this.sizing.radius,
-      })
+      return circleCircleColliding(
+        {
+          x: this.body.position.x,
+          y: this.body.position.y,
+          r: this.sizing.radius,
+        },
+        {
+          x: body.position.x,
+          y: body.position.y,
+          r: otherElement.sizing.radius,
+        }
+      )
     }
 
     if (
@@ -154,11 +161,15 @@ class GameObject {
               image(this.settings.image, 0, 0, diameter, diameter)
             })()
           : (() => {
-              fill(
-                this.settings.color.r,
-                this.settings.color.g,
-                this.settings.color.b
-              )
+              if (typeof this.settings.color === 'object') {
+                fill(
+                  this.settings.color.r,
+                  this.settings.color.g,
+                  this.settings.color.b
+                )
+              } else {
+                fill(this.settings.color)
+              }
               ellipse(0, 0, diameter, diameter)
             })()
         break

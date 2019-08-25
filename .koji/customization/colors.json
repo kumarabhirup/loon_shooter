@@ -1,5 +1,9 @@
 {
   "colors": {
+    "balloonColor1": "#ff0000",
+    "balloonColor2": "#ffff00",
+    "balloonColor3": "#00ff1d",
+    "balloonColor4": "#00e9ff",
     "backgroundColor": "#0a0a31",
     "textColor": "#ffffff",
     "playButtonTextColor": "#0a0a31",
@@ -22,6 +26,26 @@
     "icon": "🎨",
     "source": "colors.json",
     "fields": [{
+        "key": "balloonColor1",
+        "name": "Balloon 1 Color",
+        "type": "color"
+      },
+      {
+        "key": "balloonColor2",
+        "name": "Balloon 2 Color",
+        "type": "color"
+      },
+      {
+        "key": "balloonColor3",
+        "name": "Balloon 3 Color",
+        "type": "color"
+      },
+      {
+        "key": "balloonColor4",
+        "name": "Balloon 4 Color",
+        "type": "color"
+      },
+      {
         "key": "backgroundColor",
         "name": "Background color",
         "type": "color"

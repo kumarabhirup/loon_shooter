@@ -13,6 +13,7 @@ class Shooter extends GameObject {
 
   // brings another balloon after shooting one
   reload = () => {
+    shootingBalloon = null
     shootingBalloon = new Balloon(
       {
         x: width / 2,
@@ -21,9 +22,12 @@ class Shooter extends GameObject {
       { radius: 0.7 * objSize },
       {
         shape: 'circle',
-        image: imgBalloons[random([0, 1, 2, 3])], // pick a random balloon type
         rotate: true,
         shootingBalloon: true,
+        ...getBalloonSettings(
+          random(balloonTypes).color,
+          random(balloonTypes).image
+        ),
       }
     )
   }

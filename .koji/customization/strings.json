@@ -12,6 +12,7 @@
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
     "emailInputEnabled": true,
+    "useColors": true,
     "health": "3",
     "lives": "3",
     "lifeText": "+LIFE",
@@ -82,6 +83,12 @@
         "name": "Score Text",
         "description": "Default: 'Score:'",
         "type": "text"
+      },
+      {
+        "key": "useColors",
+        "name": "Use Colors?",
+        "description": "Disable if you want custom balloon images.",
+        "type": "boolean"
       },
       {
         "key": "highscoreText",

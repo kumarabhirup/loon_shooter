@@ -17,8 +17,16 @@ let shooter
 let shootingBalloon
 
 // Game Stuffs
+let isBalloonColored
+const getBalloonSettings = (color, image) => {
+  if (isBalloonColored) {
+    return { color }
+  }
+  return { image }
+}
 let shooterRotateLimit
 let shootingBalloons = []
+let balloonTypes = []
 
 // Buttons
 let playButton
@@ -77,6 +85,12 @@ function preload() {
   const newStr = myFont.replace('+', ' ')
   myFont = newStr
 
+  // Load settings from Game Settings
+  isBalloonColored = Koji.config.strings.useColors
+  scoreGain = parseInt(Koji.config.strings.scoreGain)
+  startingLives = parseInt(Koji.config.strings.lives)
+  lives = startingLives
+
   // Load background if there's any
   if (Koji.config.images.background !== '') {
     imgBackground = loadImage(Koji.config.images.background)
@@ -84,12 +98,13 @@ function preload() {
 
   // Load images
   imgShooter = loadImage(Koji.config.images.shooterImage)
-
-  imgBalloons[0] = loadImage(Koji.config.images.balloonImage1)
-  imgBalloons[1] = loadImage(Koji.config.images.balloonImage2)
-  imgBalloons[2] = loadImage(Koji.config.images.balloonImage3)
-  imgBalloons[3] = loadImage(Koji.config.images.balloonImage4)
-  imgBalloons[4] = loadImage(Koji.config.images.bombImage)
+  if (!isBalloonColored) {
+    imgBalloons[0] = loadImage(Koji.config.images.balloonImage1)
+    imgBalloons[1] = loadImage(Koji.config.images.balloonImage2)
+    imgBalloons[2] = loadImage(Koji.config.images.balloonImage3)
+    imgBalloons[3] = loadImage(Koji.config.images.balloonImage4)
+    imgBalloons[4] = loadImage(Koji.config.images.bombImage)
+  }
 
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
@@ -103,11 +118,6 @@ function preload() {
   if (Koji.config.sounds.tap) sndTap = loadSound(Koji.config.sounds.tap)
   if (Koji.config.sounds.match) sndMatch = loadSound(Koji.config.sounds.match)
   if (Koji.config.sounds.end) sndEnd = loadSound(Koji.config.sounds.end)
-
-  // Load settings from Game Settings
-  scoreGain = parseInt(Koji.config.strings.scoreGain)
-  startingLives = parseInt(Koji.config.strings.lives)
-  lives = startingLives
 }
 
 // Setup your props
@@ -141,8 +151,34 @@ function setup() {
 
   gameBeginning = true
 
-  // Load game assets
+  /**
+   * Load game assets here
+   */
   shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
+  balloonTypes = [
+    {
+      colored: isBalloonColored,
+      color: Koji.config.colors.balloonColor1,
+      image: imgBalloons[0],
+    },
+    {
+      colored: isBalloonColored,
+      color: Koji.config.colors.balloonColor2,
+      image: imgBalloons[1],
+    },
+    {
+      colored: isBalloonColored,
+      color: Koji.config.colors.balloonColor3,
+      image: imgBalloons[2],
+    },
+    {
+      colored: isBalloonColored,
+      color: Koji.config.colors.balloonColor4,
+      image: imgBalloons[3],
+    },
+  ]
+
+  // Instantiate objects
   shooter = new Shooter(
     { x: width / 2, y: height - objSize * 2 },
     { width: 2 * objSize, height: 4 * objSize },
@@ -161,20 +197,22 @@ function setup() {
     { radius: 0.7 * objSize },
     {
       shape: 'circle',
-      image: imgBalloons[1],
       rotate: true,
       shootingBalloon: true,
+      ...getBalloonSettings(
+        random(balloonTypes).color,
+        random(balloonTypes).image
+      ),
     }
   )
-
   spawnBalloons()
 
   /**
    * Load music asynchronously and play once it's loaded
    * This way the game will load faster
    */
-  // if (Koji.config.sounds.backgroundMusic)
-  //   sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
+  if (Koji.config.sounds.backgroundMusic)
+    sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
 }
 
 // An infinite loop that never ends in p5
@@ -218,6 +256,7 @@ function cleanup() {
 
   for (let i = 0; i < balloons.length; i += 1) {
     if (balloons[i].wentOutOfFrame()) {
+      balloons[i].destruct()
       balloons.splice(i, 1)
     }
   }

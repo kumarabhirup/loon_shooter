@@ -10,7 +10,7 @@ function gamePlay() {
   }
 
   /**
-   * IN GAME UI CODE GOES HERE
+   * ---------> InGame UI Code GOES HERE
    */
 
   // Shooter
@@ -47,10 +47,36 @@ function gamePlay() {
     if (theShootingBalloon.shooting) theShootingBalloon.fire()
 
     if (theShootingBalloon.wentOutOfFrame()) {
+      theShootingBalloon.destruct()
       shootingBalloons.splice(i, 1)
       shooter.reload()
     }
   }
+
+  // Collision Code
+  for (let i = 0; i < balloons.length; i += 1) {
+    const thisBalloon = balloons[i]
+
+    if (
+      shootingBalloon &&
+      thisBalloon.didTouch(
+        {
+          sizing: { radius: shootingBalloon.sizing.radius },
+          body: shootingBalloon.body,
+        },
+        'circle'
+      )
+    ) {
+      shootingBalloon.shooting = false
+      balloons.push(shootingBalloon)
+      shootingBalloons.pop()
+      shooter.reload()
+    }
+  }
+
+  /**
+   * ---------> InGame UI Code ENDS HERE
+   */
 
   // Score draw
   const scoreX = width - objSize / 2

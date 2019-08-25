@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* global objSize, gameSize, width, height, Balloon, balloons, imgBalloons, random */
+/* global objSize, gameSize, width, height, Balloon, balloons, imgBalloons, random, getBalloonSettings, balloonTypes */
 
 // Spawn Balloons in a grid
 function spawnBalloons() {
@@ -22,13 +22,11 @@ function spawnBalloons() {
           },
           {
             shape: 'circle',
-            // image: imgBalloons[random([0, 1, 2, 3])],
-            color: {
-              r: Math.floor(random(0, 255)),
-              g: Math.floor(random(0, 255)),
-              b: Math.floor(random(0, 255)),
-            },
             shootingBalloon: false,
+            ...getBalloonSettings(
+              random(balloonTypes).color,
+              random(balloonTypes).image
+            ),
           }
         )
       )
