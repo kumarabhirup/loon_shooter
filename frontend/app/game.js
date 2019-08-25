@@ -3,8 +3,8 @@
 
 // This function runs when the Game Screen is ON
 function gamePlay() {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < floatingTexts.length; i++) {
+  // Floating text effects
+  for (let i = 0; i < floatingTexts.length; i += 1) {
     floatingTexts[i].update()
     floatingTexts[i].render()
   }
@@ -14,7 +14,6 @@ function gamePlay() {
    */
 
   // Shooter
-  const shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
   shooter.show()
   shooter.rotate(
     map(
@@ -27,6 +26,25 @@ function gamePlay() {
     )
   )
   shootingBalloon.show()
+  shootingBalloon.update()
+
+  /**
+   * @summary of current shooting behaviour.
+   * If the screen is tapped, it keeps increasing the speed of balloon,
+   * until it gets out of frame or collides.
+   *
+   * The speed of shootingBalloon. Might work on this later.
+   */
+  for (let i = 0; i < shootingBalloons.length; i += 1) {
+    const theShootingBalloon = shootingBalloons[i]
+
+    if (theShootingBalloon.shooting) theShootingBalloon.fire()
+
+    if (theShootingBalloon.wentOutOfFrame()) {
+      shootingBalloons.splice(i, 1)
+      shooter.reload()
+    }
+  }
 
   // Score draw
   const scoreX = width - objSize / 2
@@ -38,9 +56,7 @@ function gamePlay() {
 
   // Lives draw
   const lifeSize = objSize
-
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < lives; i++) {
+  for (let i = 0; i < lives; i += 1) {
     image(
       imgLife,
       lifeSize / 2 + lifeSize * i,

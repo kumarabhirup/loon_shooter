@@ -18,6 +18,8 @@ class GameContainer extends Component {
 
     // Game Components
     require('script-loader!app/components/object.js')
+    require('script-loader!app/components/balloon.js')
+    require('script-loader!app/components/shooter.js')
 
     // Library
     require('script-loader!app/lib/clickable.js')

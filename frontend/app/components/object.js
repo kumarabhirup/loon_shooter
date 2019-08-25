@@ -125,7 +125,10 @@ class GameObject {
    */
   wentOutOfFrame() {
     return (
-      this.body.position.x > width + 500 || this.body.position.y > height + 500
+      this.body.position.x > width + 500 ||
+      this.body.position.x < 0 ||
+      this.body.position.y > height + 500 ||
+      this.body.position.y < 0
     )
   }
 
@@ -184,6 +187,7 @@ class GameObject {
     pop()
   }
 
+  // Rotate the object
   rotate(degrees = 0) {
     this.body.angle = degrees
   }

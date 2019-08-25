@@ -16,6 +16,10 @@ let balloons = []
 let shooter
 let shootingBalloon
 
+// Game Stuffs
+let shooterRotateLimit
+let shootingBalloons = []
+
 // Buttons
 let playButton
 let soundButton
@@ -137,7 +141,8 @@ function setup() {
   gameBeginning = true
 
   // Load game assets
-  shooter = new GameObject(
+  shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
+  shooter = new Shooter(
     { x: width / 2, y: height - objSize * 2 },
     { width: 2 * objSize, height: 4 * objSize },
     {
@@ -147,13 +152,17 @@ function setup() {
       rotate: true,
     }
   )
-  shootingBalloon = new GameObject(
-    { x: width / 2, y: height - objSize * 10 },
-    { radius: 1 * objSize },
+  shootingBalloon = new Balloon(
+    {
+      x: width / 2,
+      y: height - objSize * 1.6,
+    },
+    { radius: 0.7 * objSize },
     {
       shape: 'circle',
-      image: imgBalloons[2],
+      image: imgBalloons[1],
       rotate: true,
+      shootingBalloon: true,
     }
   )
 
@@ -161,8 +170,8 @@ function setup() {
    * Load music asynchronously and play once it's loaded
    * This way the game will load faster
    */
-  if (Koji.config.sounds.backgroundMusic)
-    sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
+  // if (Koji.config.sounds.backgroundMusic)
+  //   sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
 }
 
 // An infinite loop that never ends in p5
@@ -198,12 +207,19 @@ function draw() {
  * A good practive would be for objects to have a boolean like removable, and here you would go through all objects and remove them if they have removable = true;
  */
 function cleanup() {
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < floatingTexts.length; i++) {
+  for (let i = 0; i < floatingTexts.length; i += 1) {
     if (floatingTexts[i].timer <= 0) {
       floatingTexts.splice(i, 1)
     }
   }
+
+  for (let i = 0; i < balloons.length; i += 1) {
+    if (balloons[i].wentOutOfFrame()) {
+      balloons.splice(i, 1)
+    }
+  }
+
+  // the `shootingBalloons` array is cleaned in the game.js file itself
 }
 
 // Call this when a lose life event should trigger
@@ -228,7 +244,6 @@ function touchStarted() {
   }
 
   if (!gameOver && !gameBeginning) {
-    // InGame
     touching = true
   }
 }
@@ -247,11 +262,22 @@ function touchEnded() {
 // Key pressed and released
 function keyPressed() {
   if (!gameOver && !gameBeginning) {
+    // InGame
   }
 }
 
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
+    if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
+      shooter.shoot()
+    }
+  }
+}
+
+// Mouse Clicked
+function mouseClicked() {
+  if (!gameOver && !gameBeginning) {
+    shooter.shoot()
   }
 }
 
