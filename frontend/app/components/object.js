@@ -65,7 +65,7 @@ class GameObject {
   /**
    * @description check for collision of this object to any other object
    * @returns true if the otherElement is touching this element.
-   * @param {object} otherElement  - {sizing: {x: 100, y: 100}, body: Matter-js-body}
+   * @param {object} otherElement  - {sizing: {w: 100, h: 100}, body: Matter-js-body}
    */
   didTouch(otherElement, shape = 'circle') {
     let circle

@@ -25,8 +25,12 @@ function gamePlay() {
       true
     )
   )
+
   shootingBalloon.show()
   shootingBalloon.update()
+
+  // Dry Line
+  dryLine.show()
 
   // Balloons
   for (let i = 0; i < balloons.length; i += 1) {
@@ -57,6 +61,7 @@ function gamePlay() {
   for (let i = 0; i < balloons.length; i += 1) {
     const thisBalloon = balloons[i]
 
+    // If a balloon touches the shooterBalloon
     if (
       shootingBalloon &&
       thisBalloon &&
@@ -72,6 +77,21 @@ function gamePlay() {
       balloons.push(shootingBalloon)
       shootingBalloons.pop()
       shooter.reload()
+    }
+
+    // If a balloon touches the dryLine
+    if (
+      thisBalloon &&
+      dryLine.didTouch(
+        {
+          sizing: { radius: thisBalloon.sizing.radius },
+          body: thisBalloon.body,
+        },
+        'circle'
+      )
+    ) {
+      console.log('COLLIDED!')
+      balloons[i] = null
     }
   }
 

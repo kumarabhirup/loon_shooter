@@ -13,6 +13,7 @@ let floatingTexts = []
 
 // Game Objects
 let balloons = []
+let dryLine
 let shooter
 let shootingBalloon
 
@@ -184,6 +185,7 @@ function setup() {
 
   // Instantiate objects
   const balloonType = random(balloonTypes)
+
   shooter = new Shooter(
     { x: width / 2, y: height - objSize * 2 },
     { width: 2 * objSize, height: 4 * objSize },
@@ -194,6 +196,7 @@ function setup() {
       rotate: true,
     }
   )
+
   shootingBalloon = new Balloon(
     {
       x: width / 2,
@@ -208,6 +211,13 @@ function setup() {
       ...getBalloonSettings(balloonType.color, balloonType.image),
     }
   )
+
+  dryLine = new Line(
+    { x: 0, y: objSize * 8 },
+    { x: width, y: objSize * 8 },
+    { color: '#ffffff', strokeWeight: 4, shape: 'line' }
+  )
+
   spawnBalloons() // <- load balloons in grid
 
   /**
