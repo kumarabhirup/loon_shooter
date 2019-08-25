@@ -51,7 +51,7 @@ function gamePlay() {
     if (theShootingBalloon.shooting) theShootingBalloon.fire()
 
     if (theShootingBalloon.wentOutOfFrame()) {
-      theShootingBalloon.destruct()
+      // theShootingBalloon.destruct() <- maybe this is not needed
       shootingBalloons.splice(i, 1)
       shooter.reload()
     }
@@ -74,6 +74,8 @@ function gamePlay() {
       )
     ) {
       shootingBalloon.shooting = false
+      shootingBalloon.shootingBalloon = false
+      shootingBalloon.settings.shootingBalloon = false
       balloons.push(shootingBalloon)
       shootingBalloons.pop()
       shooter.reload()
