@@ -138,6 +138,12 @@ class GameObject {
 
     push()
     translate(position.x, position.y)
+
+    // translate at a vector if needed
+    this.settings.translateWithVector
+      ? translate(this.settings.translateWithVector)
+      : null
+
     this.settings.rotate ? rotate(angle) : null
 
     switch (this.settings.shape) {
