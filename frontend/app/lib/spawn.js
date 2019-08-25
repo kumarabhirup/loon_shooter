@@ -1,11 +1,24 @@
 /* eslint-disable no-unused-vars */
-/* global objSize, gameSize, width, height, Balloon, balloons, imgBalloons, random, getBalloonSettings, balloonTypes */
+/* 
+  global 
+
+  objSize, 
+  gameSize, 
+  width, height, 
+  Balloon, 
+  balloons, 
+  imgBalloons, 
+  random, 
+  getBalloonSettings, 
+  balloonTypes, 
+  isMobile 
+*/
 
 // Spawn Balloons in a grid
 function spawnBalloons() {
-  const rows = 2
+  const rows = 3
   const distance = objSize * 0.4 // <- don't change this
-  const rowWidth = gameSize * 1.2 // this is what part of screen balloons will occupy
+  const rowWidth = isMobile ? gameSize * 0.6 : gameSize * 1 // this is what part of screen balloons will occupy
 
   for (let i = 0; i < rows; i += 1) {
     for (let j = 0; j < rowWidth; j += 1) {
@@ -32,8 +45,9 @@ function spawnBalloons() {
     }
   }
 
-  balloons[0] = null
-  balloons[1] = null
-  balloons[balloons.length - 1] = null
-  balloons[balloons.length - 2] = null
+  // Remove balloons randomly
+  const removeHowMany = isMobile ? 8 : 20
+  for (let i = 0; i < removeHowMany; i += 1) {
+    balloons[Math.floor(random(0, balloons.length - 1))] = null
+  }
 }

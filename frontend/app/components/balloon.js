@@ -26,8 +26,6 @@ class Balloon extends GameObject {
         true
       )
     }
-
-    // TODO: make this.shooting false after colliding
   }
 
   // fire!
