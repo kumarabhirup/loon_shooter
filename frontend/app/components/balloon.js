@@ -32,6 +32,7 @@ class Balloon extends GameObject {
 
   // fire!
   fire() {
+    this.settings.translateWithVector = p5.Vector.fromAngle(shooter.body.angle)
     this.body.position.y -= Smooth(this.velocity, this.maxVelocity, 25)
   }
 }
