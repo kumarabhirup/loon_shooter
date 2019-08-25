@@ -53,13 +53,14 @@ let muteImage
 
 // Size stuff
 let objSize // Base size modifier of all objects, calculated based on screen size
+let balloonOccupancy = 0.8 // how much of the screen will balloons occupy
 
 /**
  * @description Game size in tiles
  * using bigger numbers will decrease individual object sizes but allow more objects to fit the screen
  * Keep in mind that if you change this, you might need to change text sizes as well
  */
-const gameSize = 18
+const gameSize = 18 // recommended -> 18
 
 // Mobile
 let isMobile = false
@@ -165,6 +166,8 @@ function setup() {
       shootingBalloon: true,
     }
   )
+
+  spawnBalloons()
 
   /**
    * Load music asynchronously and play once it's loaded

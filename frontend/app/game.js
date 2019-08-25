@@ -28,6 +28,12 @@ function gamePlay() {
   shootingBalloon.show()
   shootingBalloon.update()
 
+  // Balloons
+  for (let i = 0; i < balloons.length; i += 1) {
+    const balloon = balloons[i]
+    balloon.show()
+  }
+
   /**
    * @summary of current shooting behaviour.
    * If the screen is tapped, it keeps increasing the speed of balloon,
