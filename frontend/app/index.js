@@ -157,21 +157,25 @@ function setup() {
   shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
   balloonTypes = [
     {
+      type: 1,
       colored: isBalloonColored,
       color: Koji.config.colors.balloonColor1,
       image: imgBalloons[0],
     },
     {
+      type: 2,
       colored: isBalloonColored,
       color: Koji.config.colors.balloonColor2,
       image: imgBalloons[1],
     },
     {
+      type: 3,
       colored: isBalloonColored,
       color: Koji.config.colors.balloonColor3,
       image: imgBalloons[2],
     },
     {
+      type: 4,
       colored: isBalloonColored,
       color: Koji.config.colors.balloonColor4,
       image: imgBalloons[3],
@@ -179,6 +183,7 @@ function setup() {
   ]
 
   // Instantiate objects
+  const balloonType = random(balloonTypes)
   shooter = new Shooter(
     { x: width / 2, y: height - objSize * 2 },
     { width: 2 * objSize, height: 4 * objSize },
@@ -197,15 +202,13 @@ function setup() {
     { radius: 0.7 * objSize },
     {
       shape: 'circle',
-      rotate: true,
+      rotate: false,
       shootingBalloon: true,
-      ...getBalloonSettings(
-        random(balloonTypes).color,
-        random(balloonTypes).image
-      ),
+      type: balloonType.type,
+      ...getBalloonSettings(balloonType.color, balloonType.image),
     }
   )
-  spawnBalloons()
+  spawnBalloons() // <- load balloons in grid
 
   /**
    * Load music asynchronously and play once it's loaded
@@ -255,7 +258,7 @@ function cleanup() {
   }
 
   for (let i = 0; i < balloons.length; i += 1) {
-    if (balloons[i].wentOutOfFrame()) {
+    if (balloons[i] && balloons[i].wentOutOfFrame()) {
       balloons[i].destruct()
       balloons.splice(i, 1)
     }

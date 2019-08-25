@@ -3,12 +3,13 @@
 
 // Spawn Balloons in a grid
 function spawnBalloons() {
-  const rows = 5
+  const rows = 2
   const distance = objSize * 0.4 // <- don't change this
-  const rowWidth = gameSize * 0.5 // this is what part of screen balloons will occupy
+  const rowWidth = gameSize * 1.2 // this is what part of screen balloons will occupy
 
   for (let i = 0; i < rows; i += 1) {
     for (let j = 0; j < rowWidth; j += 1) {
+      const balloonType = random(balloonTypes)
       balloons.push(
         new Balloon(
           {
@@ -23,13 +24,16 @@ function spawnBalloons() {
           {
             shape: 'circle',
             shootingBalloon: false,
-            ...getBalloonSettings(
-              random(balloonTypes).color,
-              random(balloonTypes).image
-            ),
+            type: balloonType.type,
+            ...getBalloonSettings(balloonType.color, balloonType.image),
           }
         )
       )
     }
   }
+
+  balloons[0] = null
+  balloons[1] = null
+  balloons[balloons.length - 1] = null
+  balloons[balloons.length - 2] = null
 }

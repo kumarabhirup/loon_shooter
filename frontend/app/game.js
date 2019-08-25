@@ -31,7 +31,7 @@ function gamePlay() {
   // Balloons
   for (let i = 0; i < balloons.length; i += 1) {
     const balloon = balloons[i]
-    balloon.show()
+    if (balloon) balloon.show()
   }
 
   /**
@@ -59,6 +59,7 @@ function gamePlay() {
 
     if (
       shootingBalloon &&
+      thisBalloon &&
       thisBalloon.didTouch(
         {
           sizing: { radius: shootingBalloon.sizing.radius },
