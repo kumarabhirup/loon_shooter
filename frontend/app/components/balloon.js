@@ -30,10 +30,18 @@ class Balloon extends GameObject {
 
   // fire!
   fire() {
-    this.settings.translateWithVector = p5.Vector.fromAngle(
-      shooter.body.angle,
-      0
-    ) // <- don't know what this is
-    this.body.position.y -= Smooth(this.velocity, this.maxVelocity, 25)
+    this.velocity += 1
+
+    const shooterRotation = shooter.body.angle - PI / 2
+    const direction = p5.Vector.fromAngle(shooterRotation)
+    const position = createVector(
+      shooter.body.position.x +
+        direction.x * (objSize * this.velocity + objSize * 1.5),
+      shooter.body.position.x +
+        direction.y * (objSize * this.velocity + objSize * 1.5)
+    )
+
+    this.body.position.x = position.x
+    this.body.position.y = position.y
   }
 }
