@@ -283,8 +283,9 @@ function loseLife() {
   lives--
 
   if (lives <= 0) {
+    // checkHighscore() // With the new leaderboard feature, we don't save the highscore anymore
+    if (score > 0) openSetScoreWindow(score)
     gameOver = true
-    checkHighscore()
   }
 }
 

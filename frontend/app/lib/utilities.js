@@ -12,6 +12,7 @@ function checkHighscore() {
   }
 }
 
+// Sound stuffs
 function playMusic() {
   if (sndMusic) {
     sndMusic.setVolume(0.4)
@@ -28,6 +29,12 @@ function disableSound() {
 function enableSound() {
   soundEnabled = true
   getAudioContext().resume()
+}
+
+// Sets the score and changes the app view for React to handle state
+function openSetScoreWindow(gameScore) {
+  window.setScore(gameScore)
+  window.setAppView('setScore')
 }
 
 // Call this function on sound button click

@@ -10,8 +10,6 @@ const { p5 } = window
 
 class GameContainer extends Component {
   componentDidMount() {
-    require('script-loader!app/index.js')
-
     // Game Beginning and Game Screen
     require('script-loader!app/game.js')
     require('script-loader!app/not-game.js')
@@ -29,6 +27,9 @@ class GameContainer extends Component {
     require('script-loader!app/lib/spawn.js')
     require('script-loader!app/lib/utilities.js')
     require('script-loader!app/lib/entities.js')
+
+    // Load the main entry point of the p5.js game!
+    require('script-loader!app/index.js')
 
     // eslint-disable-next-line new-cap
     this.p5Game = new p5(null, document.getElementById('game-container'))
