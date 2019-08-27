@@ -13,11 +13,11 @@ function checkHighscore() {
 }
 
 // Sound stuffs
-function playMusic() {
-  if (sndMusic) {
-    sndMusic.setVolume(0.4)
-    sndMusic.setLoop(true)
-    sndMusic.play()
+function playMusic(music, volume = 0.4, loop = false) {
+  if (music) {
+    music.setVolume(volume)
+    music.setLoop(loop)
+    music.play()
   }
 }
 

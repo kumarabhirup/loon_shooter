@@ -53,6 +53,7 @@ let sndMusic
 let sndTap
 let sndMatch
 let sndEnd
+let sndLife
 
 let soundEnabled = true
 let canMute = true
@@ -119,6 +120,7 @@ function preload() {
   if (Koji.config.sounds.tap) sndTap = loadSound(Koji.config.sounds.tap)
   if (Koji.config.sounds.match) sndMatch = loadSound(Koji.config.sounds.match)
   if (Koji.config.sounds.end) sndEnd = loadSound(Koji.config.sounds.end)
+  if (Koji.config.sounds.life) sndLife = loadSound(Koji.config.sounds.life)
 }
 
 // Setup your props
@@ -225,7 +227,9 @@ function setup() {
    * This way the game will load faster
    */
   if (Koji.config.sounds.backgroundMusic)
-    sndMusic = loadSound(Koji.config.sounds.backgroundMusic, playMusic)
+    sndMusic = loadSound(Koji.config.sounds.backgroundMusic, () =>
+      playMusic(sndMusic, 0.4, false)
+    )
 }
 
 // An infinite loop that never ends in p5

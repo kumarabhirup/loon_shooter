@@ -19,6 +19,7 @@
     "scoreGain": "5",
     "enableCursor": true,
     "noMoves": "No Moves Available!",
+    "touchedTheLine": "Shit! You touched the line!",
     "leaderboardButtonText": "LEADERBOARD",
     "endButtonText": "END GAME",
     "weaponText": "FIREPOWER",
@@ -82,6 +83,12 @@
         "key": "scoreText",
         "name": "Score Text",
         "description": "Default: 'Score:'",
+        "type": "text"
+      },
+      {
+        "key": "touchedTheLine",
+        "name": "Line Touched Text",
+        "description": "Message that appears after balloon touches the line.",
         "type": "text"
       },
       {

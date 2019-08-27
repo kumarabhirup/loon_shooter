@@ -92,7 +92,26 @@ function gamePlay() {
         'circle'
       )
     ) {
-      console.log('COLLIDED!')
+      if (Koji.config.sounds.life) {
+        // eslint-disable-next-line no-loop-func
+        sndLife = loadSound(Koji.config.sounds.life, () =>
+          playMusic(sndLife, 1, false)
+        )
+      }
+
+      floatingTexts.push(
+        new FloatingText(
+          width / 2,
+          height / 2,
+          Koji.config.strings.touchedTheLine,
+          Koji.config.colors.floatingTextColor,
+          50
+        )
+      )
+
+      loseLife()
+      score -= 100
+
       balloons[i] = null
     }
   }

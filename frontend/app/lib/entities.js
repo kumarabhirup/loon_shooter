@@ -62,7 +62,7 @@ function FloatingText(x, y, txt, color, size) {
       this.size = Smooth(this.size, this.maxSize, 2)
     }
 
-    this.timer -= 1 / frameRate()
+    this.timer -= 0.8 / frameRate()
   }
 
   this.render = function() {

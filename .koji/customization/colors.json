@@ -18,7 +18,8 @@
     "playButtonClickColor": "#ffda5a",
     "buttonHoverColor": "#23bcc5",
     "buttonClickColor": "#2CECF5",
-    "lifeColor": "#d54b8c"
+    "lifeColor": "#d54b8c",
+    "floatingTextColor": "#ffff00"
   },
   "@@editor": [{
     "key": "colors",
@@ -123,6 +124,11 @@
       {
         "key": "enemyNumberColor",
         "name": "Enemy Number Color",
+        "type": "color"
+      },
+      {
+        "key": "floatingTextColor",
+        "name": "Floating Text Color that notifies the user",
         "type": "color"
       }
     ]
