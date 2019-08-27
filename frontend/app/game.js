@@ -64,7 +64,7 @@ function gamePlay() {
           height / 2,
           Koji.config.strings.wentOutOfFrame,
           Koji.config.colors.floatingTextColor,
-          50
+          objSize * 2
         )
       )
 
@@ -125,7 +125,7 @@ function gamePlay() {
           height / 2,
           Koji.config.strings.touchedTheLine,
           Koji.config.colors.floatingTextColor,
-          50
+          objSize * 2
         )
       )
 
