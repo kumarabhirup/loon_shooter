@@ -19,7 +19,8 @@
     "scoreGain": "5",
     "enableCursor": true,
     "noMoves": "No Moves Available!",
-    "touchedTheLine": "Shit! You touched the line!",
+    "touchedTheLine": "Shit 💩 You just touched the line!",
+    "wentOutOfFrame": "Lost that balloon? Lost a life!",
     "leaderboardButtonText": "LEADERBOARD",
     "endButtonText": "END GAME",
     "weaponText": "FIREPOWER",
@@ -89,6 +90,12 @@
         "key": "touchedTheLine",
         "name": "Line Touched Text",
         "description": "Message that appears after balloon touches the line.",
+        "type": "text"
+      },
+      {
+        "key": "wentOutOfFrame",
+        "name": "Balloon Went Out Text",
+        "description": "Message that appears when balloon is lost out of the game.",
         "type": "text"
       },
       {
