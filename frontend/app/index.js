@@ -285,6 +285,11 @@ function loseLife() {
   if (lives <= 0) {
     // checkHighscore() // With the new leaderboard feature, we don't save the highscore anymore
     if (score > 0) openSetScoreWindow(score)
+
+    // before game gets over, remove all balloons and spawn them again
+    balloons = []
+    spawnBalloons()
+
     gameOver = true
   }
 }
@@ -326,6 +331,10 @@ function keyReleased() {
   if (!gameOver && !gameBeginning) {
     if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
       shooter.shoot()
+    }
+    if (keyCode === SHIFT) {
+      score += 1
+      loseLife()
     }
   }
 }
