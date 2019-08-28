@@ -77,7 +77,38 @@ function gamePlay() {
     }
   }
 
-  // Collision Code
+  /**
+   * Collision Code!
+   */
+
+  // This is the check for matching balloons collision
+  for (let i = 0; i < balloons.length; i += 1) {
+    for (let j = 0; j < balloons.length; j += 1) {
+      const thisBalloon = balloons[i]
+      const otherBalloon = balloons[j]
+
+      // If a balloon touches another balloon
+      if (
+        thisBalloon &&
+        otherBalloon &&
+        thisBalloon.didTouch(
+          {
+            sizing: { radius: otherBalloon.sizing.radius },
+            body: otherBalloon.body,
+          },
+          'circle'
+        ) &&
+        thisBalloon.settings.type === otherBalloon.settings.type &&
+        thisBalloon !== otherBalloon // <- dunno whether this really works 😅
+      ) {
+        // console.log('Matching Balloons Collided') // <- game becomes slow due to console log
+        balloons[i] = null
+        balloons[j] = null
+      }
+    }
+  }
+
+  // This is the check for dryLine and shootingBalloon collision
   for (let i = 0; i < balloons.length; i += 1) {
     const thisBalloon = balloons[i]
 
@@ -94,8 +125,8 @@ function gamePlay() {
       )
     ) {
       shootingBalloon.shooting = false
-      shootingBalloon.shootingBalloon = false
-      shootingBalloon.settings.shootingBalloon = false
+      // shootingBalloon.shootingBalloon = false
+      // shootingBalloon.settings.shootingBalloon = false
       balloons.push(shootingBalloon)
       shootingBalloons.pop()
       shooter.reload()
