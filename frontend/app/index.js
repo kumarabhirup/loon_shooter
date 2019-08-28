@@ -336,10 +336,6 @@ function keyReleased() {
     if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
       shooter.shoot()
     }
-    if (keyCode === SHIFT) {
-      score += 1
-      loseLife()
-    }
   }
 }
 
