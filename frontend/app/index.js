@@ -29,6 +29,10 @@ let shooterRotateLimit
 let shootingBalloons = []
 let balloonTypes = []
 
+const balloonGridRows = 3 // No. of rows in balloon grid
+let balloonGridDistance
+let balloonGridRowWidth
+
 // Buttons
 let playButton
 let soundButton
@@ -157,6 +161,8 @@ function setup() {
   /**
    * Load game assets here
    */
+  balloonGridDistance = objSize * 0.4 // <- don't change this
+  balloonGridRowWidth = isMobile ? gameSize * 0.6 : gameSize * 1 // this is what part of screen balloons will occupy
   shooterRotateLimit = isMobile ? objSize * 3 : objSize * 7
   balloonTypes = [
     {

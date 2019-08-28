@@ -38,6 +38,12 @@ function gamePlay() {
     if (balloon) balloon.show()
   }
 
+  // Spawn Balloon when no balloon left
+  if (balloons.filter(balloon => balloon !== null).length <= 0) {
+    balloons = []
+    spawnBalloons()
+  }
+
   /**
    * @summary of current shooting behaviour.
    * If the screen is tapped, it keeps increasing the speed of balloon,
