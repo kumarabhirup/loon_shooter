@@ -64,7 +64,7 @@ function gamePlay() {
           height / 2,
           Koji.config.strings.wentOutOfFrame,
           Koji.config.colors.floatingTextColor,
-          objSize * 2
+          objSize * 1.4
         )
       )
 
@@ -93,7 +93,7 @@ function gamePlay() {
         otherBalloon &&
         thisBalloon.didTouch(
           {
-            sizing: { radius: otherBalloon.sizing.radius },
+            sizing: { radius: otherBalloon.sizing.radius }, // + objSize * 0.005 for keeping matching balloons apart
             body: otherBalloon.body,
           },
           'circle'
@@ -157,7 +157,7 @@ function gamePlay() {
           height / 2,
           Koji.config.strings.touchedTheLine,
           Koji.config.colors.floatingTextColor,
-          objSize * 2
+          objSize * 1.4
         )
       )
 

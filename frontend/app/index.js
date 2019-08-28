@@ -289,11 +289,6 @@ function loseLife() {
   if (lives <= 0) {
     // checkHighscore() // With the new leaderboard feature, we don't save the highscore anymore
     if (score > 0) openSetScoreWindow(score)
-
-    // before game gets over, remove all balloons and spawn them again
-    balloons = []
-    spawnBalloons()
-
     gameOver = true
   }
 }
@@ -358,4 +353,8 @@ function init() {
   score = 0
 
   floatingTexts = []
+
+  // before game gets over, remove all balloons and spawn them again
+  balloons = []
+  spawnBalloons()
 }
