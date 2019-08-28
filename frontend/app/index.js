@@ -217,7 +217,7 @@ function setup() {
   dryLine = new Line(
     { x: 0, y: objSize * 8 },
     { x: width, y: objSize * 8 },
-    { color: '#ffffff', strokeWeight: 4, shape: 'line' }
+    { color: '#ffffff', strokeWeight: 2, shape: 'line' }
   )
 
   spawnBalloons() // <- load balloons in grid
