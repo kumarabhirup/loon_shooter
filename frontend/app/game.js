@@ -102,6 +102,7 @@ function gamePlay() {
         thisBalloon !== otherBalloon // <- dunno whether this really works 😅
       ) {
         // console.log('Matching Balloons Collided') // <- game becomes slow due to console log
+        score += 200
         balloons[i] = null
         balloons[j] = null
       }
