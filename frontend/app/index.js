@@ -31,7 +31,7 @@ let shooterRotateLimit
 let shootingBalloons = []
 let balloonTypes = []
 
-const balloonGridRows = 1 // No. of rows in balloon grid
+const balloonGridRows = 3 // No. of rows in balloon grid
 let balloonGridDistance
 let balloonGridRowWidth
 
