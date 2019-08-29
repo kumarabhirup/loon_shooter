@@ -66,7 +66,7 @@ function spawnBalloons() {
   }
 
   // Remove balloons randomly
-  const removeHowMany = isMobile ? 8 : 20
+  const removeHowMany = isMobile ? 8 : 15
   for (let i = 0; i < removeHowMany; i += 1) {
     balloons[Math.floor(random(0, balloons.length - 1))] = null
   }

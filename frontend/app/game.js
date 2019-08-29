@@ -134,7 +134,7 @@ function gamePlay() {
         thisBalloon !== otherBalloon
       ) {
         // if block to prevent piling up of floatingTexts in when balloons spawn
-        if (floatingTexts.length <= 0) {
+        if (floatingTexts.length <= 1) {
           // eslint-disable-next-line no-loop-func
           sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy, () =>
             playMusic(sndBalloonShot, 10, false)
