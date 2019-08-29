@@ -136,7 +136,7 @@ function gamePlay() {
         otherBalloon &&
         thisBalloon.didTouch(
           {
-            sizing: { radius: otherBalloon.sizing.radius }, // + objSize * 0.005 for keeping matching balloons apart
+            sizing: { radius: otherBalloon.sizing.radius + objSize * 0.005 }, // + objSize * 0.005 for keeping matching balloons apart
             body: otherBalloon.body,
           },
           'circle'

@@ -66,10 +66,10 @@ function spawnBalloons() {
   }
 
   // Remove balloons randomly
-  const removeHowMany = isMobile ? 8 : 15
-  for (let i = 0; i < removeHowMany; i += 1) {
-    balloons[Math.floor(random(0, balloons.length - 1))] = null
-  }
+  // const removeHowMany = isMobile ? 8 : 15
+  // for (let i = 0; i < removeHowMany; i += 1) {
+  //   balloons[Math.floor(random(0, balloons.length - 1))] = null
+  // }
 }
 
 // To draw the timer in the right place
