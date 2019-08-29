@@ -11,8 +11,10 @@ function gamePlay() {
 
   // Particle effects
   for (let i = 0; i < particles.length; i += 1) {
-    particles[i].update()
-    // particles[i].render()
+    if (particles[i]) {
+      particles[i].render()
+      particles[i].update()
+    }
   }
 
   /**

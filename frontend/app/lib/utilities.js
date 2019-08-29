@@ -33,12 +33,12 @@ function addScore(amount, type, particle = { x: null, y: null }) {
   )
 
   // Spawn particles
-  if (particle.y > 0 && particles.length < 15) {
-    const particleCount = floor(random(2, 4))
+  if (particle.y > 0) {
+    const particleCount = floor(random(2, 15))
 
     for (let i = 0; i < particleCount; i += 1) {
       particles.push(
-        new Particle(particle.x, particle.y, imgBalloons[type - 1])
+        new Particle(particle.x, particle.y, imgBalloons[type - 1]) // you may use `imgLife` for the image parameter if the balloon images you have aren't good particles
       )
     }
   }

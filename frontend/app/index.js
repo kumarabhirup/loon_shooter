@@ -108,13 +108,11 @@ function preload() {
 
   // Load images
   imgShooter = loadImage(Koji.config.images.shooterImage)
-  if (!isBalloonColored) {
-    imgBalloons[0] = loadImage(Koji.config.images.balloonImage1)
-    imgBalloons[1] = loadImage(Koji.config.images.balloonImage2)
-    imgBalloons[2] = loadImage(Koji.config.images.balloonImage3)
-    imgBalloons[3] = loadImage(Koji.config.images.balloonImage4)
-    imgBalloons[4] = loadImage(Koji.config.images.bombImage)
-  }
+  imgBalloons[0] = loadImage(Koji.config.images.balloonImage1)
+  imgBalloons[1] = loadImage(Koji.config.images.balloonImage2)
+  imgBalloons[2] = loadImage(Koji.config.images.balloonImage3)
+  imgBalloons[3] = loadImage(Koji.config.images.balloonImage4)
+  imgBalloons[4] = loadImage(Koji.config.images.bombImage)
 
   imgLife = loadImage(Koji.config.images.lifeIcon)
   soundImage = loadImage(Koji.config.images.soundImage)
