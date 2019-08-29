@@ -48,8 +48,64 @@ class Entity {
  * @param {String} txt
  * @param {String} color - hex code
  * @param {Number} size
+ * @param {Number} duration - How long the text will stay
  */
-function FloatingText(x, y, txt, color, size) {
+function FloatingText(x, y, txt, color, size, duration = 0.85) {
+  this.pos = createVector(x, y)
+  this.size = 1
+  this.maxSize = size
+  this.timer = duration
+  this.text = txt
+  this.color = color
+
+  this.maxVelocityY = -objSize * 0.075
+  this.velocityY = objSize * 0.3
+  this.alpha = 1
+  this.animTimer = 0
+
+  this.update = function() {
+    this.animTimer += 1 / frameRate()
+
+    // Get dat size bounce effects
+    this.size = Ease(
+      EasingFunctions.easeOutElastic,
+      this.animTimer,
+      1,
+      this.maxSize,
+      1 / 0.65
+    )
+
+    if (this.timer < 0.3) {
+      this.alpha = Smooth(this.alpha, 0, 4)
+    }
+
+    this.velocityY = Smooth(this.velocityY, this.maxVelocityY, 4)
+    this.pos.y += this.velocityY
+
+    this.timer -= 1 / frameRate()
+  }
+
+  this.render = function() {
+    push()
+    textSize(this.size)
+
+    fill(
+      `rgba(
+        ${red(this.color)},
+        ${green(this.color)},
+        ${blue(this.color)},
+        ${this.alpha}
+      )`
+    )
+
+    textAlign(CENTER, TOP)
+    text(this.text, this.pos.x, this.pos.y)
+    pop()
+  }
+}
+
+// Same FloatingText class, but with no animation effect
+function OldFloatingText(x, y, txt, color, size) {
   this.pos = createVector(x, y)
   this.size = 1
   this.maxSize = size

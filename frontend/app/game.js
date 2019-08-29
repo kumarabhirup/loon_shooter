@@ -71,7 +71,7 @@ function gamePlay() {
       }
 
       floatingTexts.push(
-        new FloatingText(
+        new OldFloatingText(
           width / 2,
           height / 2,
           Koji.config.strings.wentOutOfFrame,
@@ -118,7 +118,7 @@ function gamePlay() {
           playMusic(sndBalloonShot, 10, false)
         )
 
-        addScore(200, thisBalloon.settings.type, {
+        addScore(Math.floor(random(180, 200)), thisBalloon.settings.type, {
           x: thisBalloon.body.position.x,
           y: otherBalloon.body.position.y,
         })
@@ -172,7 +172,7 @@ function gamePlay() {
       }
 
       floatingTexts.push(
-        new FloatingText(
+        new OldFloatingText(
           width / 2,
           height / 2,
           Koji.config.strings.touchedTheLine,

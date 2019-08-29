@@ -28,7 +28,7 @@ function addScore(amount, type, particle = { x: null, y: null }) {
       particle.y - 0.75 * objSize * 0.5,
       `+${amount}`,
       balloonTypes[type - 1].color,
-      objSize * 0.75
+      objSize * 1.1
     )
   )
 
