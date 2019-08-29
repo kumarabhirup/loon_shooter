@@ -9,6 +9,12 @@ function gamePlay() {
     floatingTexts[i].render()
   }
 
+  // Particle effects
+  for (let i = 0; i < particles.length; i += 1) {
+    particles[i].update()
+    // particles[i].render()
+  }
+
   /**
    * ---------> InGame UI Code GOES HERE
    */
@@ -60,7 +66,7 @@ function gamePlay() {
       if (Koji.config.sounds.life) {
         // eslint-disable-next-line no-loop-func
         sndLife = loadSound(Koji.config.sounds.life, () =>
-          playMusic(sndLife, 1, false)
+          playMusic(sndLife, 10, false)
         )
       }
 
@@ -107,8 +113,16 @@ function gamePlay() {
         thisBalloon.settings.type === otherBalloon.settings.type &&
         thisBalloon !== otherBalloon // <- dunno whether this really works 😅
       ) {
-        // console.log('Matching Balloons Collided') // <- game becomes slow due to console log
-        score += 200
+        // eslint-disable-next-line no-loop-func
+        sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy, () =>
+          playMusic(sndBalloonShot, 10, false)
+        )
+
+        addScore(200, thisBalloon.settings.type, {
+          x: thisBalloon.body.position.x,
+          y: otherBalloon.body.position.y,
+        })
+
         balloons[i] = null
         balloons[j] = null
       }
@@ -153,7 +167,7 @@ function gamePlay() {
       if (Koji.config.sounds.life) {
         // eslint-disable-next-line no-loop-func
         sndLife = loadSound(Koji.config.sounds.life, () =>
-          playMusic(sndLife, 1, false)
+          playMusic(sndLife, 10, false)
         )
       }
 

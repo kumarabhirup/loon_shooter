@@ -72,3 +72,37 @@ function FloatingText(x, y, txt, color, size) {
     text(this.txt, this.pos.x, this.pos.y)
   }
 }
+
+/**
+ * @class Particle
+ * Used to show the Paritcles effect
+ * @example particles.push(new Particle(...));
+ *
+ * @param {Number} x
+ * @param {Number} y
+ * @param {p5 Loaded Image} image
+ */
+class Particle extends Entity {
+  constructor(x, y, image) {
+    super(x, y)
+    this.acceleration = random(objSize * 0.006, objSize * 0.009)
+    this.velocity = createVector(
+      random(-objSize * 0.1, objSize * 0.1),
+      random(-objSize * 0.2, objSize * 0.08)
+    )
+    this.img = image
+    this.sizeMod = random(0.8, 1.3)
+    this.rotSpeed = random(-objSize * 0.01, objSize * 0.01)
+  }
+
+  update() {
+    this.velocity.y += this.acceleration
+    this.sizeMod = Smooth(this.sizeMod, 0, 30)
+    this.pos.add(this.velocity)
+    this.rotation += this.rotSpeed
+
+    if (this.pos.y > height + objSize * 2 || this.sizeMod < 0.1) {
+      this.removable = true
+    }
+  }
+}

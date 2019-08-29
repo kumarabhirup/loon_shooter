@@ -12,6 +12,38 @@ function checkHighscore() {
   }
 }
 
+/**
+ * Used to add score
+ * @param {Number} amount - amount of score to be added
+ * @param {Number} type - balloonType [0 is not a type]
+ * @param {*} particleX
+ * @param {*} particleY
+ */
+function addScore(amount, type, particle = { x: null, y: null }) {
+  score += amount
+
+  floatingTexts.push(
+    new FloatingText(
+      particle.x,
+      particle.y - 0.75 * objSize * 0.5,
+      `+${amount}`,
+      balloonTypes[type - 1].color,
+      objSize * 0.75
+    )
+  )
+
+  // Spawn particles
+  if (particle.y > 0 && particles.length < 15) {
+    const particleCount = floor(random(2, 4))
+
+    for (let i = 0; i < particleCount; i += 1) {
+      particles.push(
+        new Particle(particle.x, particle.y, imgBalloons[type - 1])
+      )
+    }
+  }
+}
+
 // Sound stuffs
 function playMusic(music, volume = 0.4, loop = false) {
   if (music) {

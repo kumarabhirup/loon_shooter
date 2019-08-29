@@ -16,6 +16,7 @@ let balloons = []
 let dryLine
 let shooter
 let shootingBalloon
+let particles = []
 
 // Game Stuffs
 let isBalloonColored
@@ -58,6 +59,7 @@ let sndTap
 let sndMatch
 let sndEnd
 let sndLife
+let sndBalloonShot
 
 let soundEnabled = true
 let canMute = true
@@ -125,6 +127,8 @@ function preload() {
   if (Koji.config.sounds.match) sndMatch = loadSound(Koji.config.sounds.match)
   if (Koji.config.sounds.end) sndEnd = loadSound(Koji.config.sounds.end)
   if (Koji.config.sounds.life) sndLife = loadSound(Koji.config.sounds.life)
+  if (Koji.config.sounds.enemyDestroy)
+    sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy)
 }
 
 // Setup your props
@@ -359,6 +363,7 @@ function init() {
   score = 0
 
   floatingTexts = []
+  particles = []
 
   // before game gets over, remove all balloons and spawn them again
   balloons = []
