@@ -82,12 +82,18 @@ function gamePlay() {
         )
       )
 
-      loseLife()
       score -= 50
 
       // theShootingBalloon.destruct() <- maybe this is not needed
       shootingBalloons.splice(i, 1)
-      shooter.reload()
+
+      // Let the FloatingText animation play before last life loses
+      if (lives !== 1) {
+        loseLife()
+        shooter.reload()
+      } else {
+        setTimeout(loseLife, 1000)
+      }
     }
   }
 
@@ -113,7 +119,7 @@ function gamePlay() {
           'circle'
         ) &&
         thisBalloon.settings.type === otherBalloon.settings.type &&
-        thisBalloon !== otherBalloon // <- dunno whether this really works 😅
+        thisBalloon !== otherBalloon
       ) {
         // if block to prevent piling up of floatingTexts in when balloons spawn
         if (floatingTexts.length <= 0) {
@@ -187,6 +193,11 @@ function gamePlay() {
         )
       }
 
+      addScore(Math.floor(random(-100, -80)), thisBalloon.settings.type, {
+        x: thisBalloon.body.position.x,
+        y: thisBalloon.body.position.y,
+      })
+
       floatingTexts.push(
         new OldFloatingText(
           width / 2,
@@ -197,10 +208,14 @@ function gamePlay() {
         )
       )
 
-      loseLife()
-      score -= 100
-
       balloons[i] = null
+
+      // Let the Particle animation play before last life loses
+      if (lives !== 1) {
+        loseLife()
+      } else {
+        setTimeout(loseLife, 1000)
+      }
     }
   }
 
