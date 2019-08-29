@@ -60,6 +60,17 @@ function gamePlay() {
 
   // Spawn Balloon when no balloon left
   if (balloons.filter(balloon => balloon !== null).length <= 0) {
+    // Increase score by 10000 after one completes the wave.
+    addScore(
+      10000,
+      3,
+      {
+        x: width / 2,
+        y: height * 0.2,
+      },
+      500
+    )
+
     balloons = []
     spawnBalloons()
   }

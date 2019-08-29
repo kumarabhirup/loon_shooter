@@ -16,10 +16,15 @@ function checkHighscore() {
  * Used to add score
  * @param {Number} amount - amount of score to be added
  * @param {Number} type - balloonType [0 is not a type]
- * @param {*} particleX
- * @param {*} particleY
+ * @param {Object} particle - { x: null, y: null }
+ * @param {Number} particleCount
  */
-function addScore(amount, type, particle = { x: null, y: null }) {
+function addScore(
+  amount,
+  type,
+  particle = { x: null, y: null },
+  particleCount = floor(random(2, 15))
+) {
   score += amount
 
   floatingTexts.push(
@@ -34,8 +39,6 @@ function addScore(amount, type, particle = { x: null, y: null }) {
 
   // Spawn particles
   if (particle.y > 0) {
-    const particleCount = floor(random(2, 15))
-
     for (let i = 0; i < particleCount; i += 1) {
       particles.push(
         new Particle(particle.x, particle.y, imgBalloons[type - 1]) // you may use `imgLife` for the image parameter if the balloon images you have aren't good particles

@@ -22,6 +22,7 @@
     "noMoves": "No Moves Available!",
     "touchedTheLine": "Shit 💩 You just touched the line!",
     "wentOutOfFrame": "Lost that balloon? Lost a life!",
+    "newBalloons": "Whoa! +10000!",
     "leaderboardButtonText": "LEADERBOARD",
     "endButtonText": "END GAME",
     "weaponText": "FIREPOWER",
@@ -85,6 +86,12 @@
         "key": "scoreText",
         "name": "Score Text",
         "description": "Default: 'Score:'",
+        "type": "text"
+      },
+      {
+        "key": "newBalloons",
+        "name": "New Balloons Celebration Text",
+        "description": "Text that appears when all balloons are shot!",
         "type": "text"
       },
       {
