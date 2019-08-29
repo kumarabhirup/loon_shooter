@@ -7,7 +7,7 @@ let myFont // The font we'll use throughout the app
 
 let gameOver = false // If it's true the game will render the main menu
 let gameBeginning = true // Should be true only before the user starts the game for the first time
-const canEnd = false
+let canEnd = false
 
 let floatingTexts = []
 let comboTexts = []
@@ -35,6 +35,13 @@ const balloonGridRows = 3 // No. of rows in balloon grid
 let balloonGridDistance
 let balloonGridRowWidth
 
+let startingGameTimer
+let gameTimer
+let gameTimerEnabled = false
+let gameOverRectangleHeight = 0 // for game over animation
+
+let canScore = false
+
 // Buttons
 let playButton
 let soundButton
@@ -45,8 +52,6 @@ let endButton
 let startingLives
 let scoreGain
 let score = 0
-
-// Data taken from Game Settings
 
 // Images
 let imgShooter
@@ -99,7 +104,17 @@ function preload() {
   scoreGain = parseInt(Koji.config.strings.scoreGain)
   startingLives = parseInt(Koji.config.strings.lives)
   comboTexts = Koji.config.strings.comboTexts.split(',')
+  startingGameTimer = parseInt(Koji.config.strings.gameTimer)
   lives = startingLives
+
+  // Timer stuff
+  if (startingGameTimer <= 0) {
+    gameTimer = 99999
+    gameTimerEnabled = false
+  } else {
+    gameTimer = startingGameTimer
+    gameTimerEnabled = true
+  }
 
   // Load background if there's any
   if (Koji.config.images.background !== '') {
@@ -225,8 +240,8 @@ function setup() {
   )
 
   dryLine = new Line(
-    { x: 0, y: objSize * 8 },
-    { x: width, y: objSize * 8 },
+    { x: 0, y: objSize * 10 },
+    { x: width, y: objSize * 10 },
     { color: '#ffffff', strokeWeight: 1, shape: 'line', alpha: 0.25 }
   )
 
@@ -315,6 +330,11 @@ function touchStarted() {
 
   if (!gameOver && !gameBeginning) {
     touching = true
+
+    if (canEnd) {
+      gameOver = true
+      if (score > 300) openSetScoreWindow(score)
+    }
   }
 }
 
@@ -357,6 +377,7 @@ function mouseClicked() {
  */
 function init() {
   gameOver = false
+  canEnd = false
 
   lives = startingLives
   highscoreGained = false
@@ -365,9 +386,14 @@ function init() {
   floatingTexts = []
   particles = []
 
+  gameTimer = startingGameTimer
+  gameOverRectangleHeight = 0
+
   // before game gets over, remove all balloons and spawn them again
   balloons = []
   spawnBalloons()
+
+  canScore = false
 
   // set score to zero if score increases mistakenly
   setTimeout(() => {

@@ -5,6 +5,8 @@
     "balloonColor3": "#00ff1d",
     "balloonColor4": "#00e9ff",
     "backgroundColor": "#0a0a31",
+    "timerText": "#ffff00",
+    "gameOverRectangleColor": "#222222",
     "textColor": "#ffffff",
     "playButtonTextColor": "#0a0a31",
     "playButtonColor": "#ffda5a",
@@ -54,6 +56,11 @@
       {
         "key": "titleColor",
         "name": "Game Title Color",
+        "type": "color"
+      },
+      {
+        "key": "timerText",
+        "name": "Game Timer Text Color",
         "type": "color"
       },
       {

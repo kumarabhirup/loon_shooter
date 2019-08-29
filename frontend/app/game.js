@@ -17,6 +17,12 @@ function gamePlay() {
     }
   }
 
+  // End Button and Timer
+  if (!gameTimerEnabled && !canEnd) {
+    endButton.update()
+    endButton.btn.draw()
+  }
+
   /**
    * ---------> InGame UI Code GOES HERE
    */
@@ -39,6 +45,12 @@ function gamePlay() {
 
   // Dry Line
   dryLine.show()
+
+  // Draw Timer!
+  if (gameTimerEnabled) {
+    gameTimer -= 1 / frameRate()
+    drawTimer()
+  }
 
   // Balloons
   for (let i = 0; i < balloons.length; i += 1) {

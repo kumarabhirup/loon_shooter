@@ -13,6 +13,7 @@
     "highscoreGainedText": "New High Score!",
     "emailInputEnabled": false,
     "useColors": true,
+    "gameTimer": "150",
     "health": "3",
     "lives": "3",
     "lifeText": "+LIFE",
@@ -84,6 +85,12 @@
         "key": "scoreText",
         "name": "Score Text",
         "description": "Default: 'Score:'",
+        "type": "text"
+      },
+      {
+        "key": "gameTimer",
+        "name": "Game Timer",
+        "description": "How many seconds before game should over?",
         "type": "text"
       },
       {
