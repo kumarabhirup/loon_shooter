@@ -10,6 +10,7 @@ let gameBeginning = true // Should be true only before the user starts the game 
 const canEnd = false
 
 let floatingTexts = []
+let comboTexts = []
 
 // Game Objects
 let balloons = []
@@ -97,6 +98,7 @@ function preload() {
   isBalloonColored = Koji.config.strings.useColors
   scoreGain = parseInt(Koji.config.strings.scoreGain)
   startingLives = parseInt(Koji.config.strings.lives)
+  comboTexts = Koji.config.strings.comboTexts.split(',')
   lives = startingLives
 
   // Load background if there's any
@@ -227,7 +229,7 @@ function setup() {
   dryLine = new Line(
     { x: 0, y: objSize * 8 },
     { x: width, y: objSize * 8 },
-    { color: '#ffffff', strokeWeight: 2, shape: 'line' }
+    { color: '#ffffff', strokeWeight: 1, shape: 'line', alpha: 0.25 }
   )
 
   spawnBalloons() // <- load balloons in grid

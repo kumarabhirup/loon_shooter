@@ -113,15 +113,29 @@ function gamePlay() {
         thisBalloon.settings.type === otherBalloon.settings.type &&
         thisBalloon !== otherBalloon // <- dunno whether this really works 😅
       ) {
-        // eslint-disable-next-line no-loop-func
-        sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy, () =>
-          playMusic(sndBalloonShot, 10, false)
-        )
+        // if block to prevent piling up of floatingTexts in when balloons spawn
+        if (floatingTexts.length <= 0) {
+          // eslint-disable-next-line no-loop-func
+          sndBalloonShot = loadSound(Koji.config.sounds.enemyDestroy, () =>
+            playMusic(sndBalloonShot, 10, false)
+          )
 
-        addScore(Math.floor(random(180, 200)), thisBalloon.settings.type, {
-          x: thisBalloon.body.position.x,
-          y: otherBalloon.body.position.y,
-        })
+          addScore(Math.floor(random(180, 200)), thisBalloon.settings.type, {
+            x: thisBalloon.body.position.x,
+            y: otherBalloon.body.position.y,
+          }) // use `Math.floor(random(180, 200))` in amount parameter for randomized score addition
+
+          floatingTexts.push(
+            new FloatingText(
+              width / 2,
+              height - objSize * 4,
+              random(comboTexts),
+              Koji.config.colors.floatingTextColor,
+              objSize * 1.4,
+              1.5
+            )
+          )
+        }
 
         balloons[i] = null
         balloons[j] = null

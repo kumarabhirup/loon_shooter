@@ -11,7 +11,7 @@
     "scoreText": "Score:",
     "highscoreText": "High Score:",
     "highscoreGainedText": "New High Score!",
-    "emailInputEnabled": true,
+    "emailInputEnabled": false,
     "useColors": true,
     "health": "3",
     "lives": "3",
@@ -40,7 +40,7 @@
     "fireCooldown": "250",
     "noTimeLeftText": "GAME OVER",
     "allowWrongMoves": false,
-    "comboText": "AWESOME, COMBO, GREAT, FANTASTIC, WOW, AMAZING"
+    "comboTexts": "AWESOME, GREAT, FANTASTIC, WOW, AMAZING"
   },
   "@@editor": [{
     "key": "strings",

@@ -9,7 +9,10 @@
   fill
   stroke
   strokeWeight,
-  collideLineCircle
+  collideLineCircle,
+  red,
+  green,
+  blue
 */
 
 class Line {
@@ -19,6 +22,7 @@ class Line {
     settings = {
       strokeWeight: 100,
       color: { r: 255, g: 255, b: 255 },
+      alpha: 1,
       shape: 'line',
     }
   ) {
@@ -36,7 +40,14 @@ class Line {
         this.settings.color.b
       )
     } else {
-      stroke(this.settings.color)
+      stroke(
+        `rgba(
+          ${red(this.settings.color)}, 
+          ${green(this.settings.color)}, 
+          ${blue(this.settings.color)},
+          ${this.settings.alpha}
+        )`
+      )
     }
 
     strokeWeight(this.settings.strokeWeight)
