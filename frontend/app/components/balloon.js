@@ -35,10 +35,8 @@ class Balloon extends GameObject {
     const shooterRotation = shooter.body.angle - PI / 2
     const direction = p5.Vector.fromAngle(shooterRotation)
     const position = createVector(
-      shooter.body.position.x +
-        direction.x * (objSize * this.velocity + objSize * 1.5),
-      shooter.body.position.x +
-        direction.y * (objSize * this.velocity + objSize * 1.5)
+      shooter.body.position.x + direction.x * (objSize * this.velocity), // (objSize * this.velocity + objSize * 1.5)
+      shooter.body.position.x + direction.y * (objSize * this.velocity) // (objSize * this.velocity + objSize * 1.5)
     )
 
     this.body.position.x = position.x

@@ -18,7 +18,7 @@
     "lives": "3",
     "lifeText": "+LIFE",
     "scoreGain": "5",
-    "enableCursor": true,
+    "enableCursor": false,
     "noMoves": "No Moves Available!",
     "touchedTheLine": "Shit 💩 You just touched the line!",
     "wentOutOfFrame": "Lost that balloon? Lost a life!",
