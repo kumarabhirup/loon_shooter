@@ -29,9 +29,7 @@ $ npm start
 
 - When balloon touches the line, you lose a life!
 
-- Shoot the colored balloon by Tapping the Shooter.
-
-- Move/Rotate/Point the Shooter by Dragging it.
+- Read the instructions in the start of the game, to be a good loon shooter.
 
 ## ⚒️ Customizations
 
@@ -40,6 +38,10 @@ Things that can be customized:
 ### Colors
 
 - Many colors are already set for you. Just use them in code.
+- Balloon 1 Color
+- Balloon 2 Color
+- Balloon 3 Color
+- Balloon 4 Color
 - Background color
 - Instruction Text colors
 - Button Text and Background colors
@@ -63,9 +65,12 @@ Things that can be customized:
 ### Game Settings
 
 - `strings.json`: lives 👉 number of chances before game overs.
-- `strings.json`: scoreIncreaseSpeed 👉 integer to increase the score by when the object is in the air.
-- `strings.json`: scoreDecreaseSpeed 👉 integer to decrease the score by when the balloon hits the line.
-- `frontend/app/lib/levels.js` 👉 array like representation of how balloons are placed.
+- `strings.json`: desktop_instructions 👉 instructions to display on desktop
+- `strings.json`: mobile_instructions 👉 instructions to display on mobile
+- `strings.json`: useColors 👉 whether to use colored balloons or balloons of images
+- `strings.json`: gameTimer 👉 number of seconds to time the game
+- `strings.json`: enableCursor 👉 whether or not display cursor to user while play screen
+- And many more! Check them out at the Koji VCC!
 
 ## 📖 Notes
 
