@@ -2,9 +2,12 @@
   "strings": {
     "fontFamily": "https://fonts.googleapis.com/css?family=Lilita+One",
     "title": "🎈 Loon Shooter 🔫",
-    "instructions1": "Bust matching loons! Look out for the line!",
-    "instructions2": "Shoot the colored balloon by a Tap",
-    "instructions3": "Move the Shooter by Dragging it",
+    "desktop_instructions1": "Bust matching loons! Do not touch the line!",
+    "desktop_instructions2": "Move the Shooter by moving the mouse",
+    "desktop_instructions3": "Click/Spacebar/Enter/Arrow Up to shoot",
+    "mobile_instructions1": "Bust matching loons! Do not touch the line!",
+    "mobile_instructions2": "Drag left/right to rotate the shooter",
+    "mobile_instructions3": "Releasing your finger off to shoot!",
     "gameOverText": "GAME OVER",
     "highScoreText": "High Score:",
     "playButtonText": "PLAY NOW",
@@ -56,18 +59,39 @@
         "type": "text"
       },
       {
-        "key": "instructions1",
+        "key": "desktop_instructions1",
         "name": "Game Instructions 1",
+        "description": "This instruction appears on desktop devices only.",
         "type": "text"
       },
       {
-        "key": "instructions2",
+        "key": "desktop_instructions2",
         "name": "Game Instructions 2",
+        "description": "This instruction appears on desktop devices only.",
         "type": "text"
       },
       {
-        "key": "instructions3",
+        "key": "desktop_instructions3",
         "name": "Game Instructions 3",
+        "description": "This instruction appears on desktop devices only.",
+        "type": "text"
+      },
+      {
+        "key": "mobile_instructions1",
+        "name": "Game Instructions 1",
+        "description": "This instruction appears on mobile devices only.",
+        "type": "text"
+      },
+      {
+        "key": "mobile_instructions2",
+        "name": "Game Instructions 2",
+        "description": "This instruction appears on mobile devices only.",
+        "type": "text"
+      },
+      {
+        "key": "mobile_instructions3",
+        "name": "Game Instructions 3",
+        "description": "This instruction appears on mobile devices only.",
         "type": "text"
       },
       {

@@ -76,7 +76,9 @@ class SetScore extends Component {
         }}
       >
         <div className="title" style={{ color: Koji.config.colors.titleColor }}>
-          {'Submit To Leaderboard'}
+          Game Over!
+          <br />
+          Submit To Leaderboard
         </div>
 
         <div

@@ -347,6 +347,8 @@ function touchEnded() {
   }
 
   touching = false
+
+  if (!shootingBalloon.shooting && isMobile) shooter.shoot() // shoot when touch ended on mobile
 }
 
 // Key pressed and released
@@ -359,7 +361,7 @@ function keyPressed() {
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
     if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
-      if (!shootingBalloon.shooting) shooter.shoot()
+      if (!shootingBalloon.shooting) shooter.shoot() // shoot by keys on desktop
     }
   }
 }
@@ -367,7 +369,7 @@ function keyReleased() {
 // Mouse Clicked
 function mouseClicked() {
   if (!gameOver && !gameBeginning) {
-    if (!shootingBalloon.shooting) shooter.shoot()
+    if (!shootingBalloon.shooting && !isMobile) shooter.shoot() // shoot by mouse click on desktop
   }
 }
 
