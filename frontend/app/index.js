@@ -240,8 +240,8 @@ function setup() {
   )
 
   dryLine = new Line(
-    { x: 0, y: objSize * 10 },
-    { x: width, y: objSize * 10 },
+    { x: 0, y: height * 0.2 + objSize * balloonGridRows * 1.4 + objSize },
+    { x: width, y: height * 0.2 + objSize * balloonGridRows * 1.4 + objSize },
     { color: '#ffffff', strokeWeight: 1, shape: 'line', alpha: 0.25 }
   )
 
