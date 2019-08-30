@@ -94,7 +94,7 @@ class Line {
         this.endingCoordinates.y,
         position.x,
         position.y,
-        otherElement.sizing.radius
+        otherElement.sizing.radius * 2
       )
     }
   }
