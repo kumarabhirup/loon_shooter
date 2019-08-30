@@ -102,10 +102,10 @@ function gamePlay() {
       floatingTexts.push(
         new OldFloatingText(
           width / 2,
-          height / 2,
+          height / 2 + height * 0.08,
           Koji.config.strings.wentOutOfFrame,
           Koji.config.colors.floatingTextColor,
-          objSize * 1.4
+          objSize * 1.2
         )
       )
 
@@ -113,11 +113,11 @@ function gamePlay() {
 
       // theShootingBalloon.destruct() <- maybe this is not needed
       shootingBalloons.splice(i, 1)
+      shooter.reload()
 
       // Let the FloatingText animation play before last life loses
       if (lives !== 1) {
         loseLife()
-        shooter.reload()
       } else {
         setTimeout(loseLife, 1000)
       }
@@ -228,10 +228,10 @@ function gamePlay() {
       floatingTexts.push(
         new OldFloatingText(
           width / 2,
-          height / 2,
+          height / 2 + height * 0.08,
           Koji.config.strings.touchedTheLine,
           Koji.config.colors.floatingTextColor,
-          objSize * 1.4
+          objSize * 1.2
         )
       )
 

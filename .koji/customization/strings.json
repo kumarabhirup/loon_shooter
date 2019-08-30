@@ -20,7 +20,7 @@
     "scoreGain": "5",
     "enableCursor": false,
     "noMoves": "No Moves Available!",
-    "touchedTheLine": "Shit 💩 You just touched the line!",
+    "touchedTheLine": "Ouch! 💩 You touched the line!",
     "wentOutOfFrame": "Lost that balloon? Lost a life!",
     "newBalloons": "Whoa! +10000!",
     "leaderboardButtonText": "LEADERBOARD",
