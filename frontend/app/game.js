@@ -186,10 +186,10 @@ function gamePlay() {
     if (
       shootingBalloon &&
       thisBalloon &&
-      thisBalloon.didTouch(
+      shootingBalloon.didTouch(
         {
-          sizing: { radius: shootingBalloon.sizing.radius },
-          body: shootingBalloon.body,
+          sizing: { radius: thisBalloon.sizing.radius },
+          body: thisBalloon.body,
         },
         'circle'
       )
