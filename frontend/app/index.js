@@ -359,7 +359,7 @@ function keyPressed() {
 function keyReleased() {
   if (!gameOver && !gameBeginning) {
     if (key === ' ' || keyCode === ENTER || keyCode === UP_ARROW) {
-      shooter.shoot()
+      if (!shootingBalloon.shooting) shooter.shoot()
     }
   }
 }
@@ -367,7 +367,7 @@ function keyReleased() {
 // Mouse Clicked
 function mouseClicked() {
   if (!gameOver && !gameBeginning) {
-    shooter.shoot()
+    if (!shootingBalloon.shooting) shooter.shoot()
   }
 }
 
