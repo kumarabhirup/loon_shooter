@@ -31,7 +31,7 @@ function addScore(
     new FloatingText(
       particle.x,
       particle.y - 0.75 * objSize * 0.5,
-      amount < 0 ? `-${amount}` : `+${amount}`,
+      amount < 0 ? `${amount}` : `+${amount}`,
       balloonTypes[type - 1].color,
       objSize * 1.1
     )
