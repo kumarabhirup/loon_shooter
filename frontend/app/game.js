@@ -29,16 +29,20 @@ function gamePlay() {
 
   // Shooter
   shooter.show()
-  shooter.rotate(
-    map(
-      mouseX,
-      shooterRotateLimit,
-      width - shooterRotateLimit,
-      PI / -3.5,
-      PI / 3.5,
-      true
+
+  // If the balloon is in the air, don't move the shooter
+  if (!shootingBalloon.shooting) {
+    shooter.rotate(
+      map(
+        mouseX,
+        shooterRotateLimit,
+        width - shooterRotateLimit,
+        PI / -3.5,
+        PI / 3.5,
+        true
+      )
     )
-  )
+  }
 
   shootingBalloon.show()
   shootingBalloon.update()
