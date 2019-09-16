@@ -3,7 +3,7 @@
 /* eslint-disable react/destructuring-assignment */
 
 import React, { Component } from 'react'
-import Koji from 'koji-tools'
+import Koji from '@withkoji/vcc'
 
 class Leaderboard extends Component {
   state = {
